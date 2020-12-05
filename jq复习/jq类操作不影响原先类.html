@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="jquery-3.4.1.js"></script>
+  <style>
+    .one{
+      width: 100px;
+      height: 100px;
+      background-color: thistle;
+      transition: all 0.7s;
+    }
+    .two{
+      transform: rotate(60deg);
+      background-color: tomato;
+    }
+  </style>
+</head>
+<body>
+  <div class="one"></div>
+  <script>
+    // 原生js 修改className 会覆盖
+  //   var one = document.querySelector('.one');
+  //   one.className = 'two';
+
+  // 用 jq 
+  // $('.one').addClass('two');  // 这个 addClass相当于追加类名，不影响以前的类名
+
+  </script>
+</body>
+</html>

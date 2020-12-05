@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    class Star{
+      // constructor 里面的 this 指向的是创建的实例对象
+      constructor(uname, age){
+        this.uname = uname;
+        this.age = age
+      }
+      sing(){
+        // 这个 sing 里面的this 指向的是实例对象 ldh 因为ldh 调用了这个函数
+        console.log("hi")
+      }
+    }
+    var ldh = new Star("刘德华");
+    ldh.sing();
+    // 1. 在 ES6中 类没有变量提升，所以必须先定义类，才能通过类实例化对象
+    // 2. 类里面共有的属性和方法一定要加 this 使用
+  </script>
+</body>
+</html>

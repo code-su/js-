@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>无缝滚动</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #anime {
+            width: 890px;
+            height: 108px;
+            margin: 100px auto;
+            position: relative;
+            overflow: hidden;
+            /* border:1px solid; */
+        }
+
+        #anime ul {
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        #anime ul li {
+            float: left;
+            list-style: none;
+        }
+
+        #anime ul li img {
+
+            width: 178px;
+            height: 108px;
+
+        }
+
+        #btn1,
+        #btn2 {
+            /* margin: auto 285px; */
+            width: 160px;
+            height: 30px;
+            border: 1px solid;
+            outline: none;
+            outline-offset: 0;
+            padding: 0px;
+            color: rgba(23,145,000,0.6);
+            background-color: aquamarine;
+            border-radius: 30px;
+        }
+        #btn1{
+            margin-left: 400px;
+        }
+        #btn2{
+            margin: 20px 0 0 320px;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            var div = document.getElementById('anime');
+            var ul = div.getElementsByTagName('ul')[0];
+            var li = ul.getElementsByTagName('li');
+
+            var timer = null;
+            var speed = 2;
+
+            ul.innerHTML += ul.innerHTML;
+            ul.style.width = li[0].offsetWidth * li.length + 'px';
+
+            function move() {
+                // timer = setInterval(function () {
+                if (ul.offsetLeft < -div.offsetWidth) {
+                    ul.style.left = 0;
+                }
+                if (ul.offsetLeft > 0) {
+                    ul.style.left = -div.offsetWidth + 'px';
+                }
+                ul.style.left = ul.offsetLeft - speed + 'px';
+                // },45);
+            }
+
+            timer = setInterval(move, 45);
+
+            // div.onmouseover = function () {
+            //     clearInterval(timer);
+            // };
+            // div.onmouseout = function () {
+            //     timer = setInterval(move,45);
+            // };
+
+            document.getElementById('btn1').onclick = function () {
+                clearInterval(timer);
+                timer = setInterval(move, 45);
+                // move();
+            };
+            document.getElementById('btn2').onclick = function () {
+                clearInterval(timer);
+            };
+        };
+    </script>
+</head>
+
+<body>
+    <input type="button" id="btn1" value="开始">
+    <input type="button" id="btn2" value="结束">
+
+
+    <div id="anime">
+        <ul>
+            <li><img src="../html/img/anime1.jpg"></li>
+            <li><img src="../html/img/anime2.jpg"></li>
+            <li><img src="../html/img/anime3.jpg"></li>
+            <li><img src="../html/img/anime4.jpg"></li>
+            <li><img src="../html/img/anime5.jpg"></li>
+        </ul>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .box {
+        width: 400px;
+        border: 1px solid red;
+        margin: 100px auto;
+        position: relative;
+      }
+      .box input {
+        width: 370px;
+        height: 30px;
+        border: none;
+        outline: none;
+      }
+      .box img {
+        position: absolute;
+        top: 8px;
+        right: 28px;
+        width: 24px;
+      }
+    </style>
+  </head>
+  <body>
+    <!--1-->
+    <!-- <img src="./html/img/anime2.jpg" alt="">
+  <div>上午好</div> -->
+    <!--2-->
+    <div class="box">
+      <label for="">
+        <img src="./javascript/images/hide.png" alt="" id="eye" />
+      </label>
+      <input type="password" id="pwd" />
+    </div>
+    <script>
+      // (1)
+      // // 分时问候并显示不同图片案例
+      // // 根据系统不同的时间来判断，所以需要用到日期内置对象
+      // // 利用多分支语句来设置不同的图片
+      // // 需要一个图片，并根据时间修改图片，就需要用到操作元素 src 属性
+      // // 需要一个 div 元素，显示不同的问候语，修改元素内容即可
+      // // 1. 获取元素
+      // var img = document.querySelector('img');
+      // var div = document.querySelector('div');
+      // // 2. 得到当前的小时数
+      // var date = new Date();
+      // var hours = date.getHours();
+      // // 3. 判断小时数改变图片和文字信息
+      // if (hours < 12) {
+      //   img.src = './html/img/anime2.jpg';
+      //   div.innerHTML = '上午好，好好学习';
+      // } else if (hours < 18) {
+      //   img.src = './html/img/anime5.jpg';
+      //   div.innerHTML = '下午好，还得学习哦';
+      // } else {
+      //   img.src = './html/img/anime3.jpg';
+      //   div.innerHTML = '晚上好，记得复习';
+      // }
+
+      // (2)
+      // 仿京东显示隐藏密码
+      //  1. 获取元素
+      var eye = document.getElementById("eye");
+      var pwd = document.getElementById("pwd");
+      //  2. 注册事件  处理程序
+      var flag = 0;
+      eye.onclick = function() {
+        if (flag == 0) {
+          // 点击一次之后  flag 一定要变化
+          pwd.type = "text";
+          eye.src = "./javascript/images/show.png";
+          flag = 1;  // 赋值操作
+        } else {
+          pwd.type = 'password';
+          eye.src = "./javascript/images/hide.png";
+          flag = 0;
+        }
+      };
+    </script>
+  </body>
+</html>

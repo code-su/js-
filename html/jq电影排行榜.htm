@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../javascript/jquery-1.12.4.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+
+        }
+
+        .box {
+            width: 300px;
+            height: 400px;
+            margin: 50px auto;
+            border: 1px solid #000;
+        }
+
+        .box>h1 {
+            font-size: 20px;
+            line-height: 35px;
+            color: deeppink;
+            padding-left: 10px;
+            border-bottom: 1px dashed #ccc;
+        }
+
+        ul>li:nth-child(n+4) span {
+            background: #ccc;
+        }
+
+        ul>li {
+            list-style: none;
+            border-bottom: 1px dashed #ccc;
+            padding: 5px 10px;
+
+        }
+
+        ul>li>span {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            background: deeppink;
+            color: white;
+            text-align: center;
+            line-height: 20px;
+            margin-right: 10px;
+        }
+
+        .content {
+            overflow: hidden;
+            margin-top: 5px;
+            display: none;
+        }
+
+        .content>img {
+            width: 120px;
+            height: 160px;
+            float: left;
+        }
+
+        .content>p {
+            width: 120px;
+            height: 160px;
+            float: right;
+            font-size: 12px;
+        }
+        .current .content{
+            display: block;
+        }
+    </style>
+    <script>
+    $(function(){
+        //编写jQuery相关代码
+        //1。监听li移入事件
+    //     $("li").mouseenter(function(){
+    //         $(this).addClass("current");
+    //     });
+    //     //监听li移出事件
+    //     $("li").mouseleave(function(){
+    //       $(this).removeClass("current");
+    //     })
+    // })
+    $("li").hover(function(){
+         $(this).addClass("current");
+    },function(){
+         $(this).removeClass("current");
+    });
+    });
+    
+    
+    </script>
+</head>
+
+<body>
+    <div class="box">
+        <h1>电影排行榜</h1>
+        <ul>
+            <li>
+                <span>1</span>最新电影
+            <div class="content">
+                <img src="../html/img/anime1.jpg" alt="">
+                <p>也v尺寸比去年气温我请你吃去从你汽车 情况 清空曹操也v尺寸比去年气温我请你吃去从你汽车 情况 清空曹操也v尺寸比去年气温我请你吃去从你汽车 情况 清空曹操也v尺寸比去年气温我请你吃去从你汽车 情况 清空曹操农村请你吃汽车尔克TV脚本文件可分为汽车 的基督教而进入 额 </p>
+            </div>
+        </li>
+            <li><span>2</span>最新电影
+                <div class="content">
+                <img src="../html/img/anime1.jpg" alt="">
+                <p>也v尺寸比去年气温我请你吃去从你汽车 情况 清空曹操也v尺寸比去年气温我请你吃去从你汽车 情况 清空曹操也v尺寸比去年气温我请你吃去从你汽车 情况 清空曹操也v尺寸比去年气温我请你吃去从你汽车 情况 清空曹操农村请你吃汽车尔克TV脚本文件可分为汽车 的基督教而进入 额 </p>
+            </div>
+            </li>
+            <li><span>3</span>最新电影
+                <div class="content">
+                <img src="../html/img/anime1.jpg" alt="">
+                <p>也v尺寸比去年气温我请你吃去从你汽车 情况 清空曹操也v尺寸比去年气温我请你吃去从你汽车 情况 清空曹操也v尺寸比去年气温我请你吃去从你汽车 情况 清空曹操也v尺寸比去年气温我请你吃去从你汽车 情况 清空曹操农村请你吃汽车尔克TV脚本文件可分为汽车 的基督教而进入 额 </p>
+            </div>
+            </li>
+            <li><span>4</span>最新电影
+                <div class="content">
+                <img src="../html/img/anime1.jpg" alt="">
+                <p>也v尺寸比去年气温我请你吃去从你汽车 情况 清空曹操也v尺寸比去年气温我请你吃去从你汽车 情况 清空曹操也v尺寸比去年气温我请你吃去从你汽车 情况 清空曹操也v尺寸比去年气温我请你吃去从你汽车 情况 清空曹操农村请你吃汽车尔克TV脚本文件可分为汽车 的基督教而进入 额 </p>
+            </div>
+            </li>
+            <li><span>5</span>最新电影
+                <div class="content">
+                <img src="../html/img/anime1.jpg" alt="">
+                <p>也v尺寸比去年气温我请你吃去从你汽车 情况 清空曹操也v尺寸比去年气温我请你吃去从你汽车 情况 清空曹操也v尺寸比去年气温我请你吃去从你汽车 情况 清空曹操也v尺寸比去年气温我请你吃去从你汽车 情况 清空曹操农村请你吃汽车尔克TV脚本文件可分为汽车 的基督教而进入 额 </p>
+            </div>
+            </li>
+        </ul>
+    </div>
+</body>
+
+</html>

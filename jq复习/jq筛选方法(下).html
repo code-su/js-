@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="jquery-3.4.1.js"></script>
+  </head>
+  <body>
+    <ul>
+      <li>我是 li</li>
+      <li>我是 li</li>
+      <li class="item">我是 li</li>
+      <li>我是 li</li>
+      <li>我是 li</li>
+    </ul>
+    <ol>
+      <li>我是 li</li>
+      <li class="item">我是 li</li>
+      <li>我是 li</li>
+    </ol>
+    <div class="current"></div>
+    <div>没有current</div>
+    <script>
+      // 查找当前元素之前所有的同辈元素
+      $("ul .item")
+        .prevAll()
+        .css("color", "red");
+      // 查找当前元素之后所有的同辈元素
+      $("ul .item")
+        .nextAll()
+        .css("color", "blue");
+      // 兄弟元素 siblings 除了自身元素之外的所有亲兄弟
+      $('ol .item')
+        .siblings('li')
+        .css('background','#f40')
+      // 第n个元素
+      // (1) 我们可以利用选择器的方式选择
+      $('ul li')
+        .eq(1)
+        .css('background','pink');
+      //  判断是否有某个类名  有就返回 true  没有就返回 false
+      console.log($('div:first').hasClass('current'));
+    </script>
+  </body>
+</html>

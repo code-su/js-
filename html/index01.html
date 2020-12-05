@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <ul id="test"></ul>
+  <script type="text/javascript">
+  // // ES5
+  // var obj = {"name":"sl","age":20}
+  // var name = obj.name;
+  // var age = obj,age;
+  // console.log(name+"的年龄是"+age);
+
+  // var arr = [0,1,2,3];
+  // let Ul = document.getElementById('test');
+  // var html = ""
+  // for(var i in arr){
+  //   html += "<li>"+arr[i]+"</li>"
+  // }
+  // Ul.innerHTML = html
+  
+
+  //ES6
+  //  let obj = {"name":"sl","age":20}
+  //  let {name,age} = obj
+  //  console.log(`${name}的年龄是${age}`)
+  //  console.log(`${age}`)
+   
+  // var arr = [0,1,2,3];
+  // let Ul = document.getElementById('test');
+  // var html = ``
+  // for(var i in arr){
+  //   html += `<li>${arr[i]}</li>`
+  // }
+  // Ul.innerHTML = html
+
+  // 箭头函数
+  // ES5
+  // var foo = function(){
+  //   return 1
+  // }
+  // console.log(foo())
+
+  // ES6
+  // let foo = () => 1
+  // console.log(foo())
+
+  // let foo = (a) => a
+  // console.log(foo(12))
+
+  // let foo = (a) => {
+  //   let b = 10
+  //   return a+b
+  // }
+  // console.log(foo(1))
+
+  // var foo = () =>{
+  //   console.log(this)
+  // }
+  // foo()
+
+  // var name = "window"
+  // var obj = {
+  //   "name":"sl",
+  //   "sayHello":function(){
+  //     console.log(this.name)
+  //   }
+  // }
+
+  // this 指向定义时所在的作用域，而不是执行时所在的作用域
+  // var obj ={
+  //   "name":"sl",
+  //   "sayHello": () =>{
+  //     console.log(this.name)
+  //   }
+  // }
+  // var obj = {}
+  // obj.name = "sl"
+  // console.log(this)
+  // obj.sayHello = ()=>{
+  //   console.log(this.name)
+  // }
+  // obj.sayHello()
+
+  // var obj = {
+  //   "name":"sl",
+  //   "sayHello":function(){
+  //     console.log(this)
+  //     setTimeout(()=>{console.log(this.name)},1000)
+  //   }
+  // }
+
+  // var obj ={
+  //   "name":"sl",
+  //   "sayHello":()=>{
+  //     console.log(this)
+  //     setTimeout(()=>{console.log(this.name)},100)
+  //   }
+  // }
+  // obj.sayHello()
+
+  // var set = new Set([1,2,3,1,2]);
+  // console.log(set);
+  // 扩展运算符
+  // var arr = [...set];
+  // console.log(arr);
+  // for(let i of set){
+  //   console.log(i)
+  // }
+  // for(let i of arr){
+  //   console.log(i)
+  // }
+
+  // console.log(set.has(3));
+  // set.add(6);
+  // set.delete(1);
+  // set.clear();
+  // console.log(set,set.size);
+
+  // for(let item of set.keys()){
+  //   console.log(item);
+  // }
+  // for(let item of set.values()){
+  //   console.log(item);
+  // }
+  // for(let [key,item] of set.entries()){
+  //   console.log(key,item);
+  // }
+
+  // set.forEach((item,key)=>console.log(item*2,key*2));
+
+
+  // var map = new Map([["name","sl"],["age",20]]);
+  // console.log(map);
+  // map.set(1,1);
+  // console.log(map);
+
+  
+  </script>
+</body>
+</html>

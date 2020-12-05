@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="jquery-3.4.1.js"></script>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+    }
+    .wrap{
+      width: 230px;
+      height: 230px;
+      margin: 100px auto;
+    }
+    .wrap ul{
+      width: 216px;
+      height: 216px;
+      border: 2px solid #000;
+      overflow: hidden;
+    }
+    .wrap ul li{
+    list-style: none;
+    float: left;
+    border: 3px solid #000;
+    margin: 1px;
+    }
+    .wrap img{
+      display: block;
+      border: 0;
+      width: 100px;
+      height: 100px;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <ul>
+      <li><a href="#"><img src="../javascript/images/weibo.png" alt=""></a></li>
+      <li><a href="#"><img src="../javascript/images/weibo.png" alt=""></a></li>
+      <li><a href="#"><img src="../javascript/images/weibo.png" alt=""></a></li>
+      <li><a href="#"><img src="../javascript/images/weibo.png" alt=""></a></li>
+    </ul>
+  </div>
+  <script>
+    $(function(){
+      $('body').css('background','#ccc');
+      // 鼠标进入的时候，其他 li 标签透明度 0.5
+      $('.wrap li').hover(function(){
+        // 会出现动画队列问题  用stop()解决该问题  停止上一次动画
+        $(this).siblings().stop().fadeTo(400,.5);
+      },function(){
+      // 鼠标离开，其他 li 透明度改为 1
+      $(this).siblings().stop().fadeTo(400,1);
+      })
+      
+    })
+  </script>
+</body>
+</html>

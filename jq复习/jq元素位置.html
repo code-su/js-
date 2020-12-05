@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="jquery-3.4.1.js"></script>
+  <style>
+    .father{
+      width: 200px;
+      height: 200px;
+      background-color: pink;
+      margin: 50px 50px;
+      position: relative;
+    }
+    .son{
+      width: 100px;
+      height: 100px;
+      background-color: purple;
+      position: absolute;
+      top: 10px;
+      left: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="father">
+    <div class="son"></div>
+  </div>
+
+  <script>
+    $(function(){
+      // 1. 获取设置距离文档的位置 (偏移) offset  可获取可设置
+      console.log($(".son").offset());
+      console.log($(".son").offset().top);
+      // 2. 获取距离带有定位父级位置 (偏移) position 如果没有带定位的父级，则以文档为准
+      // 这个方法只能获取不能设置
+      console.log($(".son").position());
+
+    })
+  </script>
+</body>
+</html>

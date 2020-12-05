@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    input {
+      color: #999;
+    }
+    .input1 {
+      border: 1px solid pink;
+    }
+    .box {
+      background-color: red;
+      width: 200px;
+      height: 200px;
+      position: relative;
+    }
+    .text1 {
+      border-radius: 50%;
+      border: 1px solid #333;
+      position: absolute;
+      top: 10px;
+      right: 20px;
+      cursor: pointer;
+    }
+    .list {
+      border: 1px solid #000;
+      width: 50px;
+      height: 25px;
+      cursor: pointer;
+    }
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: none;
+    }
+  </style>
+  <body>
+    <div>
+      <input type="text" value="邮箱/ID/手机号" class="ipt" />
+      <input type="text" value="密码" class="pwd" />
+      <button>登录</button>
+    </div>
+    <div class="box">
+      <text class="text1">x</text>
+    </div>
+    <div class="nav">
+      <div class="list">
+        <text>今天</text>
+        <text>v</text>
+      </div>
+      <ul class="ul1">
+        <li>早上</li>
+        <li>中午</li>
+        <li>晚上</li>
+      </ul>
+    </div>
+    <br>
+    <button class="btn">开关灯</button>
+    <script>
+      // 1. 获取元素
+      var ipt = document.querySelector(".ipt");
+      var pwd = document.querySelector(".pwd");
+      // 2. 注册事件
+      // 获取焦点
+      ipt.onfocus = function() {
+        if (this.value == "邮箱/ID/手机号") {
+          this.value = "";
+          this.className = "input1";
+        }
+        this.style.color = "#333";
+      };
+      // 失去焦点
+      ipt.onblur = function() {
+        if (this.value === "") {
+          this.value = "邮箱/ID/手机";
+        }
+        this.style.color = "#999";
+      };
+
+      // 关闭广告
+      // 1. 获取元素
+      var text = document.querySelector("text");
+      var div = document.querySelector(".box");
+      text.onclick = function() {
+        div.style.display = "none";
+      };
+
+      // 显示下拉菜单
+      // 1. 获取元素
+      var list = document.querySelector('.list');
+      var ul = document.querySelector('.ul1');
+      // 2. 注册事件 处理程序
+      list.onclick = function() {
+       if (ul.style.display == 'none') {
+        ul.style.display = 'block';
+       } else {
+        ul.style.display = 'none';
+       }
+      }
+
+
+      // 开关灯
+      // 1.获取元素
+      var btn = document.querySelector('.btn');
+      var body = document.querySelector('body');
+      var flag = 0;
+      btn.onclick = function (){
+      if (flag == 0) {
+        body.style.backgroundColor = '#000';
+        flag = 1;
+      } else {
+        body.style.backgroundColor = '#fff';
+        flag = 0;
+      }
+      }
+    </script>
+  </body>
+</html>

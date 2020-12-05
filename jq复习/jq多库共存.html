@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="jquery-3.4.1.js"></script>
+
+</head>
+<body>
+  <div></div>
+  <span></span>
+
+  <script>
+    $(function(){
+      function $(ele){
+        return document.querySelector(ele);
+      }
+      console.log($("div"));
+      // 1. 解决 如果 $符号冲突了 使用jQuery 代替
+      jQuery.each();
+      // 2. 让jquery释放 对$ 控制权  让自己决定 
+      var suibian = jQuery.noConflict();
+      suibian("span");
+      console.log(suibian("span"));
+    })
+  </script>
+</body>
+</html>

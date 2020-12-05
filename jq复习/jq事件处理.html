@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="jquery-3.4.1.js"></script>
+  <style>
+    div{
+      width: 100px;
+      height: 100px;
+      background-color: steelblue;
+    }
+    .current{
+      background-color: darkkhaki;
+    }
+  </style>
+</head>
+<body>
+  <div></div>
+  <ul>
+    <li>hello world</li>
+    <li>hello world</li>
+    <li>hello world</li>
+    <li>hello world</li>
+  </ul>
+  <ol></ol>
+  <script>
+    $(function(){
+      // 事件处理 on()
+      // (1) on 可以绑定一个或者多个事件处理程序
+      // $("div").on({
+      //   click: function(){
+      //     $(this).css("background","green");
+      //   },
+      //   mouseenter: function(){
+      //     $(this).css("background","tomato");
+      //   },
+      //   mouseleave: function(){
+      //     $(this).css("background","pink");
+      //   }
+      // })
+
+      $("div").on("mouseenter mouseleave", function(){
+        $(this).toggleClass("current")
+      })
+
+      // (2) on 可以实现事件委托 (委派)
+      // $("ul li").click();
+      // click 是绑定在 ul 身上的，但是 触发的对象是 ul里面的小li
+      $("ul").on("click", "li", function(){
+        alert("你好啊");
+      });
+      
+      // (3) on 可以给未来动态创建的元素绑定事件
+      // $("ol li").click(function(){
+      //   alert('111');
+      // })
+      $("ol").on("click", "li", function(){
+        alert(111);
+      })
+      var li = $("<li>我是后来创建的 li</li>");
+      $("ol").append(li);
+    })
+  </script>
+</body>
+</html>

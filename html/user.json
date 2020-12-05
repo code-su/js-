@@ -1,0 +1,17 @@
+{
+  "nz" : {
+    "title":"年后",
+    "des":"撒猜测",
+    "image":"images/switch.png"
+  },
+  "bb" : {
+    "title":"啵啵啵",
+    "des":"不对不对",
+    "image":"images/wechat.png"
+  },
+  "tx" : {
+    "title":"图形图像",
+    "des":"犯嘀咕的",
+    "image":"images/weibo.png"
+  }
+}

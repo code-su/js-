@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        background-image: url(./html/img/anime1.jpg);
+        background-repeat: no-repeat;
+        background-position: center top;
+      }
+      li {
+        list-style: none;
+      }
+      .baidu {
+        overflow: hidden;
+        margin: 100px auto;
+        background-color: #fff;
+        width: 410px;
+        padding-top: 3px;
+      }
+      .baidu li {
+        float: left;
+        margin: 0 1px;
+        cursor: pointer;
+      }
+      .baidu img {
+        width: 100px;
+        height: 100px;
+      }
+    </style>
+  </head>
+  <body>
+    <ul class="baidu">
+      <li><img src="./html/img/anime1.jpg" alt="" /></li>
+      <li><img src="./html/img/anime2.jpg" alt="" /></li>
+      <li><img src="./html/img/anime3.jpg" alt="" /></li>
+      <li><img src="./html/img/anime4.jpg" alt="" /></li>
+    </ul>
+    <script>
+      // 1. 获取元素
+      var imgs = document.querySelector(".baidu").querySelectorAll("img");
+      // 2.循环注册事件
+      for (var i = 0; i < imgs.length; i++) {
+        imgs[i].onclick = function() {
+          // this.src 就是点击图片的路径
+          // 把这个路径  this.src 给body  就可以了
+          document.body.style.backgroundImage = "url(" + this.src + ")";
+        };
+      }
+    </script>
+  </body>
+</html>

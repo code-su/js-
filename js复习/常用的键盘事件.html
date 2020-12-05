@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 常用的键盘事件
+    // 1. onkeyup 按键弹起的时候触发
+    document.addEventListener('keyup', function(){
+      console.log('弹起来了');
+    })
+    // 2. onkeydown 按键按下的时候触发
+    document.addEventListener('keydown', function(){
+      console.log('按下去了keydom');
+    })
+    // 3. onkeypress 按键按下的时候触发  不能识别功能键 比如 ctrl shift 左右箭头
+    document.addEventListener('keypress', function(){
+      console.log('按下去了keyprees')
+    })
+  </script>
+</body>
+</html>

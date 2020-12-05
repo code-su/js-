@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 1. 求 1~100 之间所有数的总和与平均值
+      var sum = 0;
+      var average = 0;
+      for (var i = 1; i <= 100; i++) {
+        sum += i;
+      }
+      average = sum / 100;
+      console.log(sum);
+      console.log(average);
+
+      // 2.求 1~100 之间所有偶数的和
+      var sum = 0;
+      for (var i = 1; i <= 100; i++) {
+        if (i % 2 == 0) {
+          sum += i;
+        }
+      }
+      console.log(sum);
+
+      // 3.求100以内7的倍数的总和
+      var sum = 0;
+      for (var i = 1; i <= 100; i++) {
+        if (i % 7 == 0) {
+          sum += i;
+        }
+      }
+      console.log(sum);
+
+      // 4. 使用for 循环打印矩形  要求每次输出一个♥
+      var str = "";
+      for (var i = 1; i <= 4; i++) {
+        for (var j = 1; j <= 5; j++) {
+          str += "♥";
+        }
+        str += "\n";
+      }
+      console.log(str);
+
+      // 5. 使用for 循环打印三角形
+      var str = "";
+      for (var i = 1; i <= 5; i++) {
+        for (var j = 1; j <= i; j++) {
+          str += "♥";
+        }
+        str += "\n";
+      }
+      console.log(str);
+
+      // 6. 用for 循环打印九九乘法表
+      var str = "";
+      for (var i = 1; i <= 9; i++) {
+        for (var j = 1; j <= i; j++) {
+          str += j + "x" + i + "=" + i * j + "\t";
+        }
+        str += "\n";
+      }
+      console.log(str);
+
+      // 7. 接收用户输入的用户名和密码，若用户名为'admin' ,密码为 '123456' 则提示用户登录成功！否则  让用户一直输入
+      // var uname = prompt("请输入你的名称");
+      // var password = prompt("请输入你的密码");
+      // while (uname !== "admin" || password !== "123456") {
+      //   uname = prompt("请输入你的名称");
+      //   password = prompt("请输入你的密码");
+      // }
+
+      // // 8. 求整数 1~100 的累加值，但要求跳过所有个位为3的数 (用continue 实现)
+      // var sum = 0;
+      // for (var i = 1; i <= 100; i++) {
+      //   if (i % 10 == 3) {
+      //     continue;
+      //   }
+      //   sum += i;
+      // }
+      // console.log(sum);
+
+      // boss  简易ATM
+      var num = 100;
+      var message = prompt(
+        "请输入你要的操作:\n1.存钱\n2.取钱\n3.显示余额\n4.退出"
+      );
+      switch (message) {
+        case "1":
+          var save = prompt("请输入存的金额");
+          num = parseFloat(num) + parseFloat(save);
+          alert("你的余额为" + num);
+          message = prompt(
+            "请输入你要的操作:\n1.存钱\n2.取钱\n3.显示余额\n4.退出"
+          );
+        case "2":
+          var tack = prompt("请输入取的金额");
+          num = parseFloat(num) - parseFloat(tack);
+          alert("你的余额为" + num);
+          message = prompt(
+            "请输入你要的操作:\n1.存钱\n2.取钱\n3.显示余额\n4.退出"
+          );
+        case "3":
+          alert("你的余额为" + num);
+          message = prompt(
+            "请输入你要的操作:\n1.存钱\n2.取钱\n3.显示余额\n4.退出"
+          );
+        case "4":
+          alert("正在退出业务");
+          break;
+        default:
+          alert("不好意思，业务暂无");
+      }
+    </script>
+  </body>
+</html>

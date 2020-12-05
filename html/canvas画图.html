@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+    <canvas id="mycanvas" width="300" height="270" style="border:1px solid #008c8c">
+        不支持canvas元素，请更新最新的浏览器
+      </canvas>
+    <script>
+       //  实例-渐变
+        var c = document.getElementById("mycanvas");
+        var cxt = c.getContext("2d");
+        //  线性渐变
+        var grd =cxt.createLinearGradient(0,0,175,0);
+        grd.addColorStop(0,"#f00");
+        grd.addColorStop(0.5,"#00f");
+        grd.addColorStop(1,"#0f0");
+        cxt.fillStyle = grd;
+        cxt.fillRect(30,160,240,30);
+
+        //  径向渐变
+         var s = cxt.createRadialGradient(50,100,30,50,100,35);
+         s.addColorStop(0,"yellow");
+         s.addColorStop(0.75,"#008c8c");
+         s.addColorStop(1,"blue");
+         cxt.fillStyle = s;
+         cxt.fillRect(30,120,240,30);
+        
+      //  实例-圆形
+      // var c = document.getElementById("mycanvas");
+      // var cxt = c.getContext("2d");
+      // cxt.fillStyle = "#f00";
+      // cxt.beginPath ();
+      // cxt.arc(50,30,20,0,Math.PI*2,true);
+      // cxt.closePath();
+      // cxt.fill();
+     
+       //绘制矩形
+       var c = document.getElementById("mycanvas");
+       var cxt = c.getContext("2d");
+       cxt.beginPath();
+       cxt.rect(30,40,55,44);
+       cxt.lineWidth = 1;
+       cxt.strokeStyle = "black";
+       cxt.stroke();
+       cxt.fillStyle = "cyan";
+       //设置阴影
+       cxt.shadowColor = "black";
+       cxt.shadowBlur = 8;
+       cxt.shadowOffsetX = 15;
+       cxt.shadowOffsetY = 10;
+       cxt.fill();
+       
+      
+       //绘制圆形
+       cxt.beginPath ();
+       cxt.arc(160,62,40,0,Math.PI*2,true);
+       cxt.lineWidth = 1;
+       cxt.strokeStyle = "black";
+       cxt.stroke();
+       cxt.fillStyle = "#008c8c";
+        //设置阴影
+       cxt.shadowColor = "red";
+       cxt.shadowBlur = 20;
+       cxt.shadowOffsetX = 15;
+       cxt.shadowOffsetY = 20;
+       cxt.globalAlpha = 0.3;
+       cxt.fill();
+
+
+      
+        </script>
+   
+
+</body>
+</html>

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      /*
+
+      var a = undefined;
+      a = 20 ;
+      console.log(a) // 20;
+      console.log(a) // 
+
+      // 在a的作用域里面
+      var x = undefined;
+      function C(){
+  
+      console.log(x); //60
+      x = b;
+      console.log(x);  //80
+
+      }
+      b = 40;
+      console.log(x); // undefined
+      x = 60;
+      console.log(b); // 40
+      b = 80;
+      c();
+      // 60  80 
+      console.log(b) //80
+
+      */
+
+      //  for (var i = 0; i < 10; i++){
+      //     (function(){
+      //       (setTimeout(function(){
+      //       console.log()
+      //     },1000))
+      //     })()
+
+      //  }
+
+      //   数组升序
+      // var arr=[12,89,45,23,56,32]
+      // arr.sort((a,b)=>{
+      //   if(a<b){return a-b}})
+      // console.log(arr)
+
+      // 数组去重
+
+      // var arr = [
+      //   1,
+      //   1,
+      //   2,
+      //   "4",
+      //   "4",
+      //   4,
+      //   8,
+      //   9,
+      //   null,
+      //   null,
+      //   undefined,
+      //   undefined,
+      //   NaN,
+      //   {},
+      //   NaN,
+      //   {}
+      // ];
+      // ES6 Set去重
+      // function unique(arr) {
+      //   return Array.from(new Set(arr));
+      // }
+      // console.log(unique(arr));
+
+      // 利用Map方法去重
+      // function unique(arr) {
+      //   let map = new Map();
+      //   let array = new Array();
+
+      //   for (let i = 0; i < arr.length; i++) {
+      //     if (map.has(arr[i])) {
+      //       map.set(arr[i], true);
+      //     } else {
+      //       map.set(arr[i], false);
+      //       array.push(arr[i]);
+      //     }
+      //   }
+      //   return array;
+      // }
+      // console.log(unique(arr));
+
+      // 利用 hasOwnProperty 方法去重
+      // function unique(arr) {
+      //   var obj = {};
+      //   return arr.filter((item,index,arr)=>{
+      //     return obj.hasOwnProperty(typeof item + item)? false: (obj[typeof item + item] = true)
+      //   })
+      // }
+
+      // console.log(unique(arr))
+
+      // 字符串中判断数字
+      var str = 'a1sc';
+      var str1 = 'asdz';
+
+      console.log(isNaN(str));
+      console.log(isNaN(parseInt(str1)));
+
+
+
+
+
+
+
+
+
+
+
+      // var a = 20;
+      // console.log(a);
+      // var a = function(){
+      //   b = 40;
+      //   console.log(x);
+      //   var x = 60;
+      //   console.log(b);
+      //   b = 80;
+      //   function c(){
+      //     console.log(x);
+      //     x = b;
+      //     console.log(x);
+      //   }
+      //   c();
+      // }
+      // console.log(a);
+      // a();
+      // console.log(b);
+    </script>
+  </body>
+</html>

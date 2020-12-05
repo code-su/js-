@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 算数运算符 是由数字, 运算符, 变量等组成的式子 成为表达式  1 + 1
+      // console.log(1 + 1); // 2  就是返回值
+      // console.log(1 - 1); // 0
+      // console.log(1 * 1); // 1
+      // console.log(1 / 1); // 1
+      // 1. % 取余 (取模)
+      // console.log(5 % 3); // 2
+      // console.log(3 % 5); // 3
+      // 2. 浮点数 算数运算里面会有问题
+      // console.log(0.1 + 0.2); // 0.30000000000000004
+      // console.log(0.07 * 100); // 7.000000000000001
+      // 3. 我们不能直接拿着浮点数来进行相比较  是否相等
+      // var num = 0.1 + 0.2;
+      // console.log(num == 0.3);
+
+      // 递增  递减
+      // 前置递增 ++ 写在变量前面
+      // var num = 10;
+      // ++num; // 类似于 age = age + 1
+      // console.log(num);
+      // 先加一  后返回值
+      // var p = 10;
+      // console.log(++p + 10); // 21
+      // // 后置递增
+      // var num1 = 10;
+      // num1 ++;
+      // console.log(num)
+      // 前置递增和后置递增如果单独使用 效果是一样的
+      // 先返回原值 后加一
+      // var age = 10;
+      // console.log(age++ + 10); // 20
+      // console.log(age); // 11
+
+      // 比较运算符
+      // console.log(3 >= 5); // false
+      // console.log(3 <= 5); // true
+      // 1.我们程序里面的等于符号 是 ==  默认转换数据类型  会把字符串的数据转换为数字型
+      // console.log(3 == 5);  // false
+      // console.log('你' == '我'); // false
+      // console.log(18 == 18); // true
+      // console.log(null == null); // true
+      // console.log(undefined == undefined); // true
+      // console.log(18 == '18'); // true
+      // console.log(18 != 18); //false      
+
+      // 2. 我们程序里面有全等  一模一样
+      // console.log(18 === 18); // true
+      // console.log(18 === '18'); //false
+      // console.log(undefined === undefined); // true
+      // console.log(null === null); // true
+
+
+      // 逻辑运算符
+      // 1.逻辑与 && (并且)  两侧都为true 结果才是 true ,只要一侧为false 结果就是 false
+      // console.log(3 > 5 && 3 > 2); // false
+      // console.log(3 < 5 && 3 > 2); // true
+      // 2.逻辑或 || (或者)   只要有一侧为 true 结果就是 true , 两侧都是 false 结果就是 false
+      // console.log(3 > 5 || 3 > 2);  // true
+      // console.log(3 > 5 || 3 < 2);  // false
+      // 3.逻辑非 not !
+      // console.log(!true); // false
+
+      // 短路运算
+      // 1.逻辑与 短路运算  如果表达式1 结果为真 则返回表达式2, 如果表达式1 结果为假 则返回表达式1
+      // console.log(123 && 456);   // 456
+      // console.log(0 && 123);  // 0
+      // 2.如果有空的或者否定的为假 其余是真的  0 '' null undefined NaN
+      // 3.逻辑或 短路运算  如果表达式1 结果为真 则返回表达式1, 如果表达式1 结果为假 则返回表达式2
+      // console.log(123 || 456); // 123
+      // console.log(0 || 456); // 456
+      // 逻辑中断很重要 它会影响我们程序运行的结果
+      // var num = 0;
+      // console.log(123 || num++); // 123
+      // console.log(num);  // 0
+
+      // 赋值运算符
+      // var num = 10;
+      // num += 2;
+      // console.log(num);  // 12
+      // var age = 2;
+      // age *= 3;
+      // console.log(age);  // 6
+
+      // 运算符优先级
+       // 1. 小括号: ()   2.一元运算符:  ++ ！ 3.算数运算符:  先 * / % 后 + - 4. 关系运算符: > >= < <=
+       // 5. 相等运算符: == != === !==  6.逻辑运算符: 先 && 后 || 7. 赋值运算符: =  8.逗号运算符 , 
+
+
+    </script>
+  </body>
+</html>

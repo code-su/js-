@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button>传统注册事件</button>
+    <button>方法监听注册事件</button>
+    <button>IE9 以前 attachEvent</button>
+    <script>
+      // 注册事件的两种方式
+      var btns = document.querySelectorAll("button");
+      // 1. 传统注册事件 唯一性
+      btns[0].onclick = function() {
+        alert("h");
+      };
+      btns[0].onclick = function() {
+        alert("hhh");
+      };
+      // 2. 事件侦听注册事件  addEventListener 有兼容性 IE9以上
+      // (1) 里面的事件类型是字符串 必定加引号 而且不带 on
+      // (2) 同一个元素 同一个事件可以添加多个侦听器(事件处理程序)
+      btns[1].addEventListener("click", function() {
+        alert("你好");
+      });
+      btns[1].addEventListener("click", function() {
+        alert("你好啊");
+      });
+      // 3. attachEvent IE9以前的版本支持
+      btns[2].attachEvent("onclick", function() {
+        alert("111"); // 报错
+      });
+
+      // 注册事件兼容性解决方案
+      // 兼容性的处理原则：首先照顾大多数浏览器，在处理特殊浏览器
+      function addEventListener(element, eventName, fn) {
+        // 判断当前浏览器是否支持 addEventListener 方法
+        if (element.addEventListener) {
+          element.addEventListener(eventName, fn); // 第三个参数 默认是 false
+        } else if (element.attachEvent) {
+          element.attachEvent("on" + eventName, fn);
+        } else {
+          // 相当于 element.onclick = fn;
+          element["on" + eventName] = fn;
+        }
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="jquery-3.4.1.js"></script>
+  <style>
+    div{
+      width: 100px;
+      height: 100px;
+      background-color: darkorange;
+    }
+  </style>
+</head>
+<body>
+  <div></div>
+  <ul>
+    <li>我是 li</li>
+    <li>我是 li</li>
+    <li>我是 li</li>
+  </ul>
+<p>qqqqq</p>
+  <script>
+    $(function(){
+      $("div").on({
+        click: function(){
+          console.log("点击了");
+        },
+        mouseover: function(){
+          console.log("鼠标经过了");
+        }
+      })
+        // 事件委托
+        $("ul").on("click","li", function(){
+          alert(11);
+        })
+      // 1. 事件解绑 off
+      $("div").off();  // 如果括号为空 说明把div的事件全部解绑
+      $("div").off("click"); // 解除了div身上的点击事件
+      // 解除事件委托绑定
+      $("ul").off("click","li");
+
+      // 2. one() 但是它只能触发事件一次
+      $("p").one("click",function(){
+        alert(111)
+      })
+    })
+  </script>
+</body>
+</html>

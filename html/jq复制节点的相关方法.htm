@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../javascript/jquery-1.12.4.js"></script>
+    <script>
+        $(function () {
+            /*
+            复制
+            clone
+            如果传入false就是浅复制，浅复制只会复制元素，不会复制元素的事件
+            如果传入true就是深复制，深复制会复制元素，也会复制元素的事件。
+            */
+            $("button").eq(0).click(function () {
+                //1.浅复制一个元素
+                var $li = $("li:first").clone(false);
+                //2.将复制的元素添加到ul中
+                $("ul").append($li);
+            })
+            $("button").eq(1).click(function () {
+                //1.深复制一个元素
+                var $li = $("li:first").clone(true);
+                //2.将复制的元素添加到ul中
+                $("ul").append($li);
+            })
+        })
+
+    </script>
+</head>
+
+<body>
+    <button>浅复制节点</button>
+    <button>深复制节点</button>
+    <h1>我是标题1</h1>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+    </ul>
+
+</body>
+
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div>我是div</div>
+  <span>我是span</span>
+  <div class="box">
+    <div class="test"></div>
+  </div>
+  <ul>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+  </ul>
+  
+  <script>
+    // 节点的基本属性  nodeType(节点类型)  nodeName(节点名称) nodeValue(节点值)
+    // 元素节点 nodeType 为 1
+    // 属性节点 nodeType 为 2
+    // 文本节点 nodeType 为 3 (文本节点包含文字 空格 换行等)
+    // 获取父节点
+    // 元素.parentNode  获取的是最近的父节点
+    var test = document.querySelector('.test');
+    console.log(test.parentNode)
+
+    // 获取子节点
+    // (1) 元素.childNodes 获取的是所有的节点 包括文本节点 元素节点 就是 空格 换行
+    var ul = document.querySelector('ul');
+    console.log(ul.childNodes)
+    // 这种方法获取的节点  我们可以通过 for 循环遍历 然后判断 这些childNodes[i] == 1,从而得到元素节点
+    // (2) 元素.children 获取的是元素节点  (推荐使用)
+    console.log(ul.children);
+    console.log(ul.nodeType)
+
+
+    // 1.这两种获取的都不是想要的节点 
+    // 获取第一个子节点  元素.firstChild  获取的是第一个子节点 不管是文本节点 还是 元素节点
+    console.log(ul.firstChild);  // 文本节点 #text
+    // 获取最后一个子节点 元素.lastChild   获取的是最后一个子节点 不管是文本节点 还是 元素节点
+    console.log(ul.lastChild);   // 文本节点  #text
+
+    // 2.下面这两种可以获取  注意这两个方法有兼容性，IE9 以上才支持
+    // (1) 元素.firstElementChild  返回的是第一个子元素节点  找不到返回 null
+    console.log(ul.firstElementChild); // <li>1</li>
+    // (2) 元素.lastElementChild  返回的是最后一个子元素节点  找不到返回 null
+    console.log(ul.lastElementChild);  //  <li>4</li>
+
+    // 3.实际开发的写法 既没有兼容性问题又返回第一个子元素
+    console.log(ul.children[0]);   // <li>1</li>
+    console.log(ul.children[ul.children.length - 1]);    //  <li>4</li>
+
+    
+
+
+    //  获取兄弟节点
+    // 1. 元素.nextSibling   获取的是当前元素下一个兄弟节点 包括文本节点 元素节点 就是 空格 换行
+    var div = document.querySelector('div');
+    console.log(div.nextSibling);  // 文本节点 #text
+    // 这个不是我们想要的
+
+    // 存在兼容性问题 IE9 以上才支持
+    // 2. 元素.nextElementSibling  获取的是当前元素下一个兄弟元素节点  找不到则返回 null
+    console.log(div.nextElementSibling); // 返回的是元素节点 span 
+
+    // 元素.previousElementSibling  获取当前元素上一个兄弟元素节点 
+    console.log(div.previousElementSibling); // null
+
+    // 如需解决兼容性问题  可封装一个函数
+    function getNextElementSibling(element) {
+      var ele = element;
+      while (ele = ele.nextSibling) {
+        if (ele.nodeType === 1) {
+          return ele;
+        }
+      }
+      return null;
+    }
+
+
+
+    // 1. 创建节点 元素节点
+    var li = document.createElement('li');
+    // 2. 添加元素节点 node.appendChild(child);  node 父级  child 子级
+    var ul = document.querySelector('ul');
+    ul.appendChild(li); // 添加到末尾  类似 数组的 push()
+    // 3. 添加元素节点  node.insertBefore(child, 指定元素);
+    var lili = document.createElement('li');
+    ul.insertBefore(lili, ul.children[0]);  // 添加到指定元素的前面
+    // 4. 我们想要页面添加一个新的元素： 1. 先创建元素  2. 添加元素
+    
+     // 三种动态创建元素的区别
+     // 1. document.write();  是直接将内容写入页面的内容流，如果文档流执行完毕，在调用它则会导致页面全部重绘
+     // document.write('<div>123</div>');
+
+     // 2. document.innerHTML;
+     // 是将内容写入某个 DOM 节点，不会导致页面重绘
+     // innerHTML 创建多个元素效率更高(不要采用拼接字符串，采用数组形式拼接), 结构稍微复杂
+
+     // 3. document.createElement();
+    //  createElement() 创建多个元素效率稍微低一点点，但是结构更清晰
+    
+
+
+    // 1. 删除节点 元素节点  删除父节点中的某一个子节点
+    // node.removeChild(child) 从DOM中删除一个子节点， 返回删除的节点
+
+
+    // 克隆节点(复制节点)
+    // node.cloneNode(); 括号里面为空 或者为false  则是浅拷贝 既只克隆复制节点本身，不克隆里面的子节点
+    // node.cloneNode(true); 括号里面参数为 true 则是深拷贝 会复制节点本身以及里面所有的子节点
+
+
+
+
+    
+  </script>
+</body>
+</html>

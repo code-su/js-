@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="jquery-3.4.1.js"></script>
+</head>
+<body>
+  <div></div>
+  <script>
+    // DOM对象： 用原生js 获取过来的对象就是DOM对象
+    var myDiv = document.querySelector('div'); // myDiv 就是 DOM对象
+    // jq对象：用jq方式获取的对象就是jq 对象，本质通过$把DOM元素进行了包装
+    $('div'); // $('div') 就是一个 jq 对象  是以伪数组的方式
+    // jq对象只能使用 jq 方法，DOM 对象则使用原生的js 属性和方法
+
+
+    // DOM对象转换为jq对象
+    $(myDiv); // $(myDiv) 就是 jq 对象
+    // 把jq对象转换为DOM对象
+    // 1
+    $('div')[0]  // 加索引号
+    // 2
+    $('div').get(0)
+  </script>
+</body>
+</html>

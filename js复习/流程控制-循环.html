@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 循环的目的: 可以重复某些代码
+      // 1. for 循环  重复执行某些代码，通常跟计数有关系
+      // 2. for 语法结构
+      // for (初始化变量; 条件表达式; 操作表达式) {
+      //     // 循环体
+      // }
+      // 3. 初始化变量 就是用 var 声明的一个普通变量，通常用于作为计数器使用
+      // 4. 条件表达式 就是用来决定每一次循环是否继续执行 就是终止条件
+      // 5. 操作表达式 是每次循环最后执行的代码 经常用于我们计数器变量进行更新(递增或递减)
+      // 6. 体检一下 打印30次 你好
+      // for (var i = 0; i < 30; i++) {
+      //     console.log('你好');
+      // }
+      // (1) 首先执行里面的计数器变量 var i = 0, 但是这句话在for循环里面只执行一次 i(index)
+      // (2) 然后去 i <= 30 来判断是否满足条件，如果满足条件 就去执行循环体 不满足条件就退出循环
+      // (3) 最后去执行 i++  i++ 是单独写的代码 递增  第一轮结束
+      // (4) 接着去执行 i <= 30 如果满足条件 就去执行循环体 不满足条件就退出循环 第二轮
+
+      // 我们可以让用户控制输出的次数
+      // var num = prompt('请你输入次数');
+      // for (var i = 0; i < num; i++) {
+      //   console.log('你好')
+      // }
+
+      // 我们想要输出1个人 1~100岁
+      // for (var i = 1; i <= 100; i++){
+      //   console.log('这个人今年'+ i +'岁了');
+      // }
+
+      // 案例 求1~100之间所有整数的累加和
+      // 我们需要一个存储变量 sum 但是初始值一定是 0
+      // 核心算法: 1 + 2 + 3 + 4.....  sum = sum + i;
+      // var sum = 0;
+      // for (var i = 0; i <= 100; i++ ) {
+      //    // sum = sum + i; // 等价于
+      //     sum += i;
+      // }
+      // console.log(sum)
+
+      // 案例1 求1~100 之间所有数的平均值
+      // var sum = 0;
+      // var average = 0;
+      // for (var i = 1; i <= 100; i++) {
+      //   sum += i;
+      // }
+      // average = sum / 100;
+      // console.log(average);
+
+      // 案例2 求1~100 之间所有奇数和偶数的和
+      // var odd = 0;
+      // var even = 0;
+      // for (var i = 1; i <= 100; i++) {
+      //     if (i % 2 == 0) {
+      //       even = even + i;
+      //     } else {
+      //       odd = odd + i
+      //     }
+      // }
+      // console.log(odd + even);  // 总的和
+      // console.log(even);  // 偶数的和
+      // console.log(odd);  // 奇数的和
+
+      // 案例3 求1~100 之间所有能被 3 整除的数字的和
+      // var result = 0;
+      // for (var i = 1; i <= 100; i++) {
+      //   if(i % 3 == 0){
+      //     result = result + i // 等价于
+      //     result += i;
+      //   }
+      // }
+      // console.log(result)
+
+      // 案例 求学生成绩
+      // 分析
+      // 1. 弹出输入框输入总的班级人数(person)
+      // 2. 依次输入学生的成绩 (保存起来 score) 此时我们需要用到
+      // 3. for循环 弹出的次数跟班级人数有关系 条件表达式 i <= person
+      // 4. 进行业务处理: 计算成绩， 先求总成绩(sum) 之后求平均成绩(average)
+      // 最后弹出结果
+      // var person = prompt('请输入你的班级人数');
+      // var sum = 0;
+      // var average = 0;
+      // for (var i = 1; i <= person; i++ ) {
+      //   // 因为从 prompt 取过来的数据是 字符串型的 需要转换为数字型的
+      //     var score = prompt('请输入第'+ i +'个学生成绩');
+      //     sum = sum + parseFloat(score);
+      // }
+      // average = sum / person;
+      // alert('班级总的分数是' + sum);
+      // alert('班级总的平均分数是' + average);
+
+      // 案例  一行打印五颗星星
+      // var str = '';
+      // for (var i = 1; i <= 5; i++) {
+      //     str = str + '♥'
+      // }
+      // console.log(str)
+
+      //  1.双重 for 循环  语法结构
+      // for (外层的初始化变量; 外层的条件表达式; 外层的操作表达式) {
+      //     for (里层的初始化变量; 里层的条件表达式; 里层的操作表达式) {
+      //         // 执行语句
+      //     }
+      // }
+      //  2. 我们可以把里面的循环 看作是外层的循环语句
+      //  3. 外层循环循环一次  里面的循环执行全部
+      //  4. 代码验证
+      // for (var i = 1; i <= 3; i++) {
+      //   console.log('这是外层第'+ i +'次循环')
+      //   for (var j = 1; j <= 3; j++) {
+      //     console.log('这是里层的第'+ j + '次循环')
+      //   }
+      // }
+
+      // 案例 打印五行五列星星
+      // var str = "";
+      // for (var i = 1; i <= 5; i++) {
+      //   for (var j = 1; j <= 5; j++) {
+      //     str = str + "♥";
+      //   }
+      //   // 如果一行打印完毕5个心 就要另起一行
+      //   str = str + "\n";
+      // }
+      // console.log(str);
+
+      // 案例 打印n行n列的心
+      // 外层循环负责行数   里层循环负责列数
+      // var str = '';
+      // var rows = prompt('请输入行数');
+      // var cols = prompt('请输入列数');
+      // for (var i = 1; i <= rows; i++) {
+      //   for (var j = 1; j <= cols; j++) {
+      //     str = str + '♥'
+      //   }
+      //   str = str + '\n'
+      // }
+      // console.log(str)
+
+      // 案例  打印倒三角型
+      // var str = '';
+      // for (var i = 1; i <= 10; i++) {    //  外层循环控制行数
+      //   for (var j = i; j <= 10; j++) {   //  里层循环打印的个数不一样  j = i
+      //     str = str + '♥';
+      //   }
+      //   str += '\n';
+      // }
+      // console.log(str);
+
+      // 案例  打印正三角型
+      // var str = '';
+      // for (var i = 1; i <= 10; i++) {
+      //   for (var j = 1; j <= i; j++) {
+      //     str += '♥';
+      //   }
+      //   str += '\n'
+      // }
+      // console.log(str)
+
+      // 案例  打印九九乘法表
+      // 一共有9行，但是每一行的个数都不一样，因此需要用到双重 for 循环
+      // 外层的 for 循环控制行数 i ，循环9次，可以打印9行
+      // 内层的 for 循环控制每行公式 j
+      // 核心算法：每一行，公式的个数正好和行数一致  j <= i;
+      // 每层打印完毕，都需要重新换一行
+      var str = "";
+      for (var i = 1; i <= 9; i++) {
+        for (var j = 1; j <= i; j++) {
+          // 1 x 2 = 2;
+          // str = str + '♥';  等价于  str += '♥'
+          str += j + "x" + i + "=" + i * j + '\t';
+        }
+        str += "\n";
+      }
+      console.log(str);
+    </script>
+  </body>
+</html>

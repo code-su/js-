@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>01-jQuery的基本结构</title>
+  <script src="../javascript/sujQuery-1.0.0.js"></script>
+  <script>
+    /*
+    1.jQuery的本质是一个闭包
+      立即执行函数
+    2.jquery为什么要使用闭包来实现？
+      为了避免多个框架冲突
+    3.jQuery如何让外界访问内部定义的局部变量
+      window.xxx = xxx;
+    4.jQuery为什么要给自己传递一个window参数？
+      为了方便后期压缩代码
+      为了提升查找效率
+    5.jQuery为什么要给自己接收一个undefined参数？
+      为了方便后期压缩代码
+      IE9以下的浏览器undefined是可以被修改的，为了保证内部使用的undefined不被修改，所以需要接收一个正确的undefined    
+    */
+  // (function(window,undefined){
+  //    var jQuery = function() {
+  //      return new jQuery.prototype.init();
+  //    }
+  //    jQuery.prototype = {
+  //      constructor: jQuery
+
+  //    }
+  //    jQuery.prototype.init.prototype = jQuery.prototype;
+  //    window.jQuery = window.$ = jQuery;
+  // })(window);
+
+
+   /*
+      1.传入‘’ null undefined NaN 0 false, 返回空的jQuery对象
+      2.字符串：
+      代码片段：会将创建好的DOM元素存储到jQuery对象中返回
+      选择器：会将找到的所有元素存储到jQuery对象中返回
+      3.数组：
+      会将数组中存储的元素依次存储到jQuery对象中返回
+      4.除上述类型以外的
+      会将传入的数据存储到jQuery对象中返回
+      */
+  //  window.onload = function(ev) {
+     $(function(){
+
+     })
+  
+     //1.传入‘’ null undefined NaN 0 false, 返回空的jQuery对象
+    // console.log($());
+    // console.log($(''))
+    // console.log($(null))
+    // console.log($(undefined))
+    // console.log($(NaN))
+    // console.log($(0))
+    // console.log($(false))
+
+    // 2.传入html片段
+    // 会将创建好的DOM元素存储到jQuery对象中返回
+    // console.log($("<p>1</p><p>2</p><p>3</p>"))
+
+    // 3.传入选择器
+    // 会将找到的所有元素存储到jQuery对象中返回
+    console.log($('.item'));
+
+    // 4.传入数组
+    // 会将数组中存储的元素依次存储到jQuery对象中返回
+    // var arr = [1,2,3,4,5];
+    // console.log($(arr));
+
+    // 5.传入伪数组
+    // 会将数组中存储的元素依次存储到jQuery对象中返回
+    // var likeArr = {0:"su",1:"1",2:"2",length:3};
+    // console.log($(likeArr));
+  
+    // console.log(typeof arr);
+    // console.log(typeof likeArr);
+    // console.log(arr.toString());
+    // console.log(likeArr.toString());
+    // console.log(({}).toString.apply(arr));
+
+    // 6.传入对象
+    // 会将传入的对象存储到jQuery对象中返回
+    // function Person() {}
+    // console.log($(new Person()));
+
+    // 7.传入DOM元素
+    // 会将传入的DOM元素存储到jQuery对象中返回
+    // console.log($(document.createElement('div')));
+
+    // 8.传入基本数据类型
+    // 会将传入的基本类型数据存储到jQuery对象中返回
+    // console.log($(123));
+    // console.log($(true));
+
+
+    // }
+  </script>
+</head>
+<body>
+  <ul>
+    <li class="item"></li>
+    <li class="item"></li>
+    <li class="item"></li>
+  </ul>
+</body>
+</html>

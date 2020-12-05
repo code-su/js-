@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 1. 第一个问题
+    console.log(1);
+    
+    setTimeout(function(){
+      console.log(3);
+    },1000)
+
+    console.log(2);
+    // 打印结果是：1 2 3
+
+    // 2. 第二个问题
+    // console.log(1);
+
+    // setTimeout(function(){
+    //   console.log(3);
+    // }, 0)
+
+    // console.log(2);
+    // 打印结果是：1 2 3
+    // 同步任务都放在主线程 执行栈
+
+    // js执行机制
+    // 1. 先执行执行栈中的同步任务。
+    // 2. 异步任务(回调函数) 放入任务队列中。
+    // 3. 一旦执行栈中的所有同步任务执行完毕，系统就会按次序读取任务队列中的异步任务,
+    // 于是被读取的异步任务结束等待状态，进入执行栈，开始执行。
+    // event loop (事件循环)
+
+  </script>
+</body>
+</html>

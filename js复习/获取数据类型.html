@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // var num = 10;
+    // console.log(num)
+    // console.log(typeof num); //number
+    // var str = 'hh';
+    // console.log(typeof str);  //string
+    // var flag = true;
+    // console.log(typeof flag); // boolean
+    // var vari = undefined;
+    // console.log( typeof vari); // undefined
+    // var timer = null;
+    // console.log(typeof timer); // object
+
+    // prompt 取过来的值是字符串类型的
+    // var age = prompt('请输入你的年龄');
+    // console.log(age);
+    // console.log(typeof age);
+
+    // 数据类型转换
+    // 转换为字符型
+    // 1.数字转换为字符串 变量.toString()
+    // var num = 10;
+    // var str = num.toString();
+    // console.log(str);
+    // console.log(typeof str);
+    // 2.利用String(变量)
+    // console.log(String(num));
+    // 3.利用 + 拼接字符串的方法实现类型转换效果 隐式转换
+    // console.log(num + '');
+
+    // 转换为数字型
+    // 1.parseInt(变量) 可以把字符串转换为数字  得到的是整数
+    // console.log(parseInt('3.14'));  // 3 取整
+    // console.log(parseInt('3.94'));  // 3 取整
+    // console.log(parseInt('30px'));  // 30 会把px 这个单位去掉
+    // 2.parseFloat(变量)  可以把 字符串转换为数字 得到的是小数 浮点数
+    // console.log(parseFloat('3.14'));  // 3.14
+    // console.log(parseFloat('30px'));   // 30 会把px 这个单位去掉
+    // 3. 利用Number(变量)
+    // console.log(Number('12')); // 12
+    // 4. 利用算数运算符 - * / 隐式转换
+    // console.log('12' - 0);  // 12
+    // console.log('12' - '10'); // 2
+
+    // 案例: 计算年龄
+    // 分析  
+    // 1.弹出一个输入框(prompt), 让用户输入出生年份 (用户输入)
+    // 2.把用户输入的值用变量保存起来, 然后用今年的年份减去变量值, 结果就是现在的年龄 (程序内部处理)
+    // 3.弹出警示框 (alert), 把计算的结果输出 (输出结果)
+
+    // var year = prompt('请你输入你的出生年份');
+    // var age = 2020 - year; // year 取过来的是字符串型的  但是这里用的减法 有隐式转换
+    // alert('你今年'+age+'岁啦');
+
+    // 案例2: 简单加法器
+    // 分析
+    // 1.先弹出一个输入框, 提示用户输入第一个值  保存起来
+    // 2.在弹出一个输入框, 提示用户输入第二个值  保存起来
+    // 3.把这两个值相加, 并将结果赋给新的变量 (注意数据类型转换)
+    // 4.弹出警示框(alert) 把计算结果输出 (输出结果)
+    // var num = prompt('请输入第一个值');
+    // var num1 = prompt('请输入第二个值');
+
+    // var sum = parseFloat(num) + parseFloat(num1);
+    // alert('结果是'+ sum);
+
+    // 转换为布尔型
+    // console.log(Boolean(''));  // false
+    // console.log(Boolean(0));   // false
+    // console.log(Boolean(null));  // false
+    // console.log(Boolean(undefined));  // false
+    // console.log(Boolean(NaN));   // false
+
+    // 课后作业
+    // 依次询问并获取用户的姓名，年龄，性别，并打印用户信息图
+    var uname = prompt('请输入你的名字');
+    var age = prompt('请输入你的年龄');
+    var sex = prompt('请输入你的性别');
+    alert('你的姓名是:'+ uname +'\n你的年龄是:'+age+'\n你的性别是:'+ sex )
+
+    // alert(`${uname}\n ${age}\n  ${sex} `)
+
+
+  </script>
+</body>
+</html>

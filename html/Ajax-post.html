@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Ajax_post</title>
+  <style>
+  *{
+    margin: 0;
+    padding: 0;
+  }
+  div{
+    width: 300px;
+    height: 300px;
+    border: 1px solid #000;
+    margin: 50px auto;
+    text-align: center;
+    background: #ccc;
+  }
+  img{
+    width: 200px;
+    height: 200px;
+    display: block;
+    margin: 10px auto 10px;
+    border: 1px solid #000;
+  }
+  p{
+    text-align: center;
+    background: pink;
+  }
+  
+  
+  </style>
+  <script src="../javascript/MyAjax2.js"></script>
+  <script>
+  window.onload = function(ev){
+    // 获取需要设置的元素
+    var Title = document.querySelector("#title");
+    var Des = document.querySelector("#des");
+    var Img = document.querySelector("img");
+
+    // 获取所有按钮
+    var Btns = document.querySelectorAll("button");
+    //给按钮添加点击事件
+    Btns[0].onclick = function(){
+      //发送Ajax请求到服务器
+      Ajax({
+       type:"get",
+       url:"users.json",
+       data: {"name":this.getAttribute("name")},
+       timeout:1000,
+       success: function(xhr){
+         alert(xhr.responseText);
+       },
+       error: function(xhr){
+         alert(xhr.status);
+       }
+
+      })
+    }
+    Btns[1].onclick = function() {
+
+    }
+    Btns[2].onclick = function () {
+
+    }
+  }
+  
+  
+  </script>
+</head>
+<body>
+ 
+<div>
+<p id="title">商品标题名字</p>
+<img src="" alt="">
+<p id="des">商品描述信息</p>
+<button name="nz">女装</button>
+<button name="bb">包包</button>
+<button name="tx">拖鞋</button>
+</div>
+</body>
+</html>

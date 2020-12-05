@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h2>JavaScript 数组</h2>
+
+<p>这个“自制的” isArray() 函数在数组上使用时返回 true：</p>
+
+<p id="demo"></p>
+
+<script>
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+document.getElementById("demo").innerHTML = isArray(fruits);
+
+function isArray(myArray) {
+  console.log(myArray + '111');
+  console.log(myArray.constructor + '222');
+  console.log(myArray.constructor.toString() + '333');
+
+  console.log(myArray.constructor.toString().indexOf() + '444')
+  console.log(myArray.constructor.toString().indexOf("native") + '555')
+  return myArray.constructor.toString().indexOf("Array") > -1;
+}
+</script>
+</body>
+</html>

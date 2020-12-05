@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // BOM (Browser Object Model) 即 浏览器对象模型，它提供了独立于内容而与 浏览器窗口进行交互的对象，其核心对象是 window
+      // BOM 由一系列相关的对象构成，并且每个对象都提供了很多方法和属性。
+      // BOM 缺乏标准，javascript 语法的标准化组织是ECMA, DOM的标准化组织是W3C, BOM 最初是Netscape浏览器标准的一部分。
+
+      // 窗口加载事件
+      // (1) window.onload = function(){};
+      // (2) window.addEventListener('load', function(){});
+      // window.onload 是窗口(页面) 加载事件，当文档内容完全加载完成会触发该事件(包括图像、脚本文件、css、文件等)，就调用的处理函数。
+      // 注意：
+      // 1. 有了window.onload就可以把Js代码写到页面元素的上方，因为onload是等页面内容全部加载完毕，再去执行处理函数。
+      // 2. window.onload传统注册事件方式只能写一次，如果有多个，会以最后一个window.onload为准。
+      // 3. 如果使用 addEventListener 则没有限制
+      // (3) document.addEventListener('DOMContentLoaded', function(){})
+      // DOMContentLoaded 事件触发时，仅当DOM加载完成，不包括样式表，图片， flash等等
+      // ie9以上才支持
+      // 如果页面的图片很多的话，从用户访问到onload触发可能需要较长的时间，交互效果就不能实现，必然影响用户的体验，
+      // 此时用DOMContentLoaded 事件比较合适。
+
+      // 调整窗口大小事件
+      //  (1) window.onresize = function(){}
+      //  (2) window.addEventListener('resize', function(){})
+      // window.onresize 是调整窗口大小加载事件，当触发时就调用的处理函数
+      // 注意：
+      // 1. 只要窗口大小发生像素变化，就会触发这个事件。
+      // 2. 我们经常利用这个事件完成响应式布局，window.innerWidth 当前屏幕的宽度
+    </script>
+  </body>
+</html>

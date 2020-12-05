@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 1. setTimeout()  延迟时间到了就去调用这个回调函数，只调用一次，就结束了这个定时器
+    // 语法规范：window.setTimeout(调用函数, 延迟时间);
+    // 这个 window 在调用的时候可以省略
+    // 这个延迟时间单位是毫秒 但是可以省略，如果省略默认是 0
+    var timer = setTimeout(function(){
+      console.log('时间到了');
+    }, 1000)
+    // 停止setTimeout定时器
+    clearTimeout(timer);
+
+    // 2. setInterval() 延迟时间到了会反复调用这个回调函数
+    //  语法规范：window.setInterval(调用函数, 延迟时间);
+    var timer1 = setInterval(function(){
+      console.log('时间已经到了')
+    }, 2000)
+    clearInterval(timer1);
+  </script>
+</body>
+</html>

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+
+        }
+
+        .nav {
+            list-style: none;
+            width: 300px;
+            /* height: 100px; */
+            margin: 100px auto;
+        }
+
+        .nav>li {
+            line-height: 35px;
+            border: 1px solid #000;
+            border-bottom: none;
+            text-indent: 2em;
+            position: relative;
+            /* box-sizing: border-box; */
+
+        }
+
+        .nav>li:last-child {
+            border-bottom: 1px solid #000;
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+        }
+
+        .nav>li:first-child {
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+
+        .nav>li>span {
+            position: absolute;
+            top: 0;
+            right: 20px;
+            text-align: center;
+
+        }
+
+        .sub {
+            display: none;
+        }
+
+        .sub>li {
+            list-style: none;
+            background: #008c8c;
+            border-top: 1px solid white;
+
+            /* border-bottom: none; */
+            /* box-sizing: border-box; */
+        }
+
+        .sub>li:hover {
+            background: cyan;
+        }
+        .nav>.current>span{
+            transform: rotate(90deg);
+            top: -15px;
+            right: 3px;
+        }
+    </style>
+    <script src="../javascript/jquery-1.12.4.js"></script>
+    <script>
+        $(function () {
+            // 创建数组映射菜单列表展开状态————false为未展开，true为展开，默认全部为false
+            var arrMap = new Array($(".nav>li").length).fill(false);
+            // 绑定点击事件
+            $(".nav>li").click(function () {
+                // 获取当前点击的索引
+                var index = $(this).index();
+
+                if(!arrMap[index]) {    //  当前点击项的数组映射为false时执行展开操作
+                    // 将当前项对应的数组索引项变为true
+                    arrMap[index] = true;
+                    var $sub = $(this).children(".sub");
+                    $sub.slideDown(1000);
+                    $(this).addClass("current");
+                } else {                //  当前点击项的数组映射为true时执行关闭操作
+                    // 将当前项对应的数组索引项变为false
+                    arrMap[index] = false;
+                    var $sub = $(this).children(".sub");
+                    $sub.slideUp(1000);
+                    $(this).removeClass("current");
+                }
+                
+                // 关闭兄弟元素
+                var $othersub = $(this).siblings().children(".sub");
+                $othersub.slideUp(1000);
+                $(this).siblings().removeClass("current");
+            })
+           
+        });
+
+
+    </script>
+</head>
+
+<body>
+    <ul class="nav">
+        <li > 一级菜单<span>&gt</span>
+            <ul class="sub">
+                <li>二级菜单</li>
+                <li>二级菜单</li>
+                <li>二级菜单</li>
+            </ul>
+        </li>
+        <li>一级菜单<span>&gt</span>
+            <ul class="sub">
+                <li>二级菜单</li>
+                <li>二级菜单</li>
+                <li>二级菜单</li>
+            </ul>
+        </li>
+        <li>一级菜单<span>&gt</span>
+            <ul class="sub">
+                <li>二级菜单</li>
+                <li>二级菜单</li>
+                <li>二级菜单</li>
+            </ul>
+        </li>
+        <li>一级菜单<span>&gt</span>
+            <ul class="sub">
+                <li>二级菜单</li>
+                <li>二级菜单</li>
+                <li>二级菜单</li>
+            </ul>
+        </li>
+        <li>一级菜单<span>&gt</span>
+            <ul class="sub">
+                <li>二级菜单</li>
+                <li>二级菜单</li>
+                <li>二级菜单</li>
+            </ul>
+        </li>
+        <li>一级菜单<span>&gt</span>
+            <ul class="sub">
+                <li>二级菜单</li>
+                <li>二级菜单</li>
+                <li>二级菜单</li>
+            </ul>
+        </li>
+        <li>一级菜单<span>&gt</span>
+            <ul class="sub">
+                <li>二级菜单</li>
+                <li>二级菜单</li>
+                <li>二级菜单</li>
+            </ul>
+        </li>
+    </ul>
+</body>
+
+</html>

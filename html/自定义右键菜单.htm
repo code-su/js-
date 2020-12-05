@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    *{
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+    #div1{
+        width: 80px;
+        position: absolute;
+        border: 1px solid black;
+        background: #ccc;
+        display: none;
+    }
+    
+    </style>
+    <script>
+    document.oncontextmenu = function (ev){
+        var event = ev||event;
+        var div = document.getElementById('div1');
+
+      div.style.display ='block';
+        div.style.left = event.clientX +'px';
+        div.style.top = event.clientY +'px'; 
+
+        return false;  //阻止默认右击事件
+
+    };
+    
+    document.onclick = function (){
+        var div = document.getElementById('div1');
+
+       div.style.display ='none';
+    }
+    </script>
+</head>
+<body>
+    <div id="div1">
+        <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+        </ul>
+    </div>
+</body>
+</html>

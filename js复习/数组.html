@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 1. 数组(Array) 就是一组数据的集合 存储在单个变量下的优雅方式
+    // 2. 利用new 创建数组
+    // var arr = new Array();  // 创建了一个空的数组
+    // 3. 利用数组字面量创建数组 []
+    // var arr = [];   //  创建一个空的数组
+    // var arr1 = [1, 2, 'hh',true];
+    // 4. 我们数组里面数据一定用逗号隔开
+    // 5.存放在数组中的数据  比如1，2 我们称为数组元素
+    // 6. 获取数组元素   数组名[索引号]
+    // console.log(arr1[3]);
+    // var date = ['星期一','星期二','星期三','星期四','星期五','星期六','星期日'];
+    // console.log(date[6]);
+
+    // 数组遍历
+    // 1. 因为我们的数组索引从0开始，所以i 必须从 0 开始  i < 3
+    // 2. 输出的时候 arr[i] i 当计数器索引用
+    // var arr = ['red','blue','green'];
+    // for (var i = 0; i < 3; i++) {
+    //   console.log(arr[i]);
+    // }
+
+    // 案例  遍历数组
+    // var arr = ['关羽','张飞','马超','赵云','黄忠','刘备','姜维'];
+    // for (var i = 0; i < arr.length; i++) {
+    //     console.log(arr[i]);
+    // }
+    // 1. 数组的长度是元素个数  不要跟索引号混淆
+    // 2. arr.length  动态监测数组元素的个数
+
+    // 案例 数组求和及平均值
+    // var arr = [2, 6, 1, 7, 4];
+    // var sum = 0;
+    // var average = 0;
+    // for ( var i = 0; i < arr.length; i++) {
+    //   sum += arr[i];  // 我们加的是数组元素 arr[i]  不是 计数器 i
+    // }
+    // average = sum / arr.length;
+    // console.log(sum, average);  // 想要输出多个变量  用逗号分隔即可
+
+    //  案例  数组中得到最大值
+    //  1.分析  声明一个保存最大元素的变量 max
+    //  2.默认最大值可以取数组中的第一个元素
+    //  3.遍历这个数组，把里面每个数组的元素 和 max 相比较
+    //  4.如果这个数组元素大于 max 就把这个数组元素存到 max 里面，否则继续下一轮比较
+    //  5.最后输出这个 max
+    // var arr = [2, 6, 23, 45, 7, 24];
+    // var max = arr[0];
+    // for (var i = 1; i < arr.length; i++) {
+    //     if(arr[i] > max) {
+    //       max = arr[i];
+    //     }
+    // }
+    // console.log('该数组里面的最大值是:' + max);
+
+    // 案例  数组中的最小值
+    // var arr = [12, 23, 4, 8, 56];
+    // var min = arr[0];
+    // for (var i = 1; i < arr.length; i++) {
+    //   if (arr[i] < min) {
+    //     min = arr[i]
+    //   }
+    // }
+    // console.log('该数组里面的最小值是:' + min);
+
+    // 将数组 ['red','green','blue','pink'] 转换为字符串，并且用 | 或者其他符号分隔
+    // 1.需要一个新变量用于存放转换完的字符串 str
+    // 2.遍历原来的数组，分别把里面的数据取出来，加到字符串里面
+    // 3.同时在后面多加一个分隔符
+    // var arr = ['red','green','blue','pink'];
+    // var str = '';
+    // var sep = '!';
+    // for (var i = 0; i < arr.length; i++) {
+    //   str += arr[i] + sep;
+    // }
+    // console.log(str);
+
+    // 数组中的新增元素
+    // 1. 修改 length 长度
+    // var arr = ['red','blue','green'];
+    // console.log(arr.length);
+    // arr.length = 5;   // 把我们数组的长度修改为了 5 里面应该有5个元素
+    // console.log(arr);
+    // console.log(arr[3]);  // undefined
+    // console.log(arr[4]);  // undefined
+
+    // 2. 新增数组元素  修改索引号  追加数组元素
+    // var arr1 = ['red','blue','green'];
+    // arr1[3] = 'pink';
+    // console.log(arr1);
+    // arr1[4] = 'cyan';
+    // console.log(arr1);
+    // arr1[0] = 'hah';  // 这里是替换原来的数组元素
+    // console.log(arr1);
+    // arr1 = '有趣有趣';
+    // console.log(arr1);  //  不要直接给  数组名赋值  否则里面的数组元素都没有了
+
+    // 案例 在一个数组里面存放10个整数(1~10)
+    // 核心原理: 使用循环来追加数组
+    // 1. 声明一个空数组 arr
+    // 2. 循环中的计数器 i 可以作为数组元素存入
+    // 3. 由于数组的索引号是从 0 开始的 因此计数器从 0 开始更合适，存入的数组元素要 +1
+    // var arr = [];
+    // for (var i = 0; i < 10; i++) {
+    //   // arr = i; 不要直接给数组名赋值，否则以前的元素都没了
+    //   arr[i] = i + 1;
+    // }
+    // console.log(arr);
+
+    // 案例  筛选数组
+    // 方法一
+    // var arr = [10 ,12 ,23 ,6 ,20];
+    // var arr1 = [];
+    // var j = 0;
+    // for ( var i = 0; i < arr.length; i++) {
+    //   if (arr[i] > 10) {
+    //     // 新数组索引号应该从 0 开始  依次递增
+    //     arr1[j] = arr[i];
+    //     j++;
+    //   }
+    // }
+    // console.log(arr1);
+
+    // 方法二
+    // var arr = arr = [10, 12, 23, 6, 20];
+    // var arr1 = [];
+    // for (var i = 0; i < arr.length; i++) {
+    //   if ( arr[i] > 10) {
+    //     arr1[arr1.length] = arr[i];
+    //   }
+    // }
+    // console.log(arr1);
+
+    // 案例 删除指定数组元素
+    // 1. 要求: 将数组[2, 0, 6, 1, 77, 0, 52, 0, 25, 7] 中的 0 去掉后，形成一个不包含 0 的新数组
+    // var arr = [2, 0, 6, 1, 77, 0, 52, 0, 25, 7];
+    // var newArr = [];
+    // for (var i = 0; i < arr.length; i++) {
+    //   if (arr[i] !== 0) {
+    //     newArr[newArr.length] = arr[i];
+    //   }
+    // }
+    // console.log(newArr);
+
+    // 案例 翻转数组
+    // 1. 要求: 将数组['red','green','pink','purple']的内容反过来存放
+    // 输出: ['purple','pink','green','red']
+    // 声明一个新数组 newArr
+    // 把旧数组索引号第 4 个 取过来(arr.length - 1), 给新数组索引号第 0 个元素(newArr.length)
+    // 我们采取递减的方式
+    // var arr = ['red','green','pink','purple'];
+    // var newArr = [];
+    // for (var i = arr.length - 1; i >= 0; i--) {
+    //   newArr[newArr.length] = arr[i];
+    // }
+    // console.log(newArr);
+
+
+    // 数组案例 (冒泡排序)
+    var arr = [5, 4, 3, 2, 1];
+    for (var i = 0; i <= arr.length - 1; i++) {  // 外层循环的趟数
+        for (var j = 0; j <= arr.length - i - 1; j++ ) {  //  里层循环管  每一躺的交换次数
+            // 内部交换2个变量的值  前一个和后面一个数组元素相比较
+            if (arr[j] > arr[j + 1]) {
+              var temp = arr[j];
+              arr[j] = arr[j + 1];
+              arr[j + 1] = temp;
+            }
+        }
+    }
+    console.log(arr);
+  </script>
+</body>
+</html>

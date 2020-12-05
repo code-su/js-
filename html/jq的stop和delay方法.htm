@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    div{
+        width: 100px;
+        height: 100px;
+        background: red;
+    }
+    .two{
+        width: 500px;
+        height: 10px;
+        background: cyan;
+    }
+    
+    
+    </style>
+    <script src="../javascript/jquery-1.12.4.js"></script>
+    <script>
+    $(function(){
+        $("button").eq(0).click(function(){
+            $(".one").animate({
+            marginLeft: 300,
+            width: 50
+            },1000).animate({
+                height: 150
+            },1000)
+            $(".one").delay(1500).animate({
+            width: 100,
+            marginLeft: 0
+            },1000).delay(2000).animate({
+                height: 100
+            },1000)
+        })
+        $("button").eq(1).click(function(){
+            $(".one").stop(true );
+        })
+    })
+    
+    </script>
+</head>
+<body>
+    <button>开始动画</button>
+    <button>停止动画</button>
+    <div class="one"></div>
+    <div class="two"></div>
+</body>
+</html>

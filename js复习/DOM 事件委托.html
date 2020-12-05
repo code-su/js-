@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <ul>
+      <li>你好</li>
+      <li>你好</li>
+      <li>你好</li>
+      <li>你好</li>
+    </ul>
+    <script>
+      // 事件委托的核心原理：给父节点添加侦听器，利用事件冒泡影响每一个子节点
+      var ul = document.querySelector("ul");
+      ul.addEventListener("click", function(e) {
+        // alert('hahah');
+        // 得到所有的 li
+        var lis = ul.querySelectorAll("li");
+        for (var i = 0; i < lis.length; i++) {
+          // 排他思想 先把所有 li 的 背景颜色设置为 ''
+          lis[i].style.backgroundColor = "";
+          // 把点击的当前的 li 的背景颜色 设置为 pink
+          e.target.style.backgroundColor = "pink";
+        }
+        // e.target.style.backgroundColor = "pink";
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <button>点击</button>
+  <div></div>
+  <body>
+    <script>
+      // 1. 获取元素
+      var btn = document.querySelector("button");
+      var div = document.querySelector("div");
+      // 2. 注册事件
+      var timer = 5;
+
+      btn.addEventListener("click", function() {
+        time();
+        setInterval(time, 1000);
+      });
+      function time() {
+        if (timer == 0) {
+          location.href = "http://www.itcast.cn";
+        } else {
+          div.innerHTML = "网页将在" + timer + "秒跳转";
+          timer--;
+        }
+      }
+    </script>
+  </body>
+</html>

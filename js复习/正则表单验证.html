@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .form {
+        width: 300px;
+        height: 400px;
+        margin: 100px auto;
+      }
+      .form li {
+        list-style: none;
+        margin-top: 10px;
+      }
+      span {
+        display: inline-block;
+      }
+      .error {
+        color: red;
+      }
+      .succeed {
+        color: green;
+      }
+      button {
+        width: 160px;
+        margin-top: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="form">
+      <ul>
+        <li>
+          <input class="uname" type="text" placeholder="请输入用户名" />
+          <span class="msg"></span>
+        </li>
+        <li>
+          <input class="pwd" type="password" placeholder="请输入6-16密码" />
+          <span class="msg"></span>
+        </li>
+        <li>
+          <input class="tel" type="text" placeholder="请输入手机号" />
+          <span class="msg"></span>
+        </li>
+      </ul>
+      <button>登录</button>
+    </div>
+
+    <script>
+      var uname = document.querySelector(".uname");
+      var pwd = document.querySelector(".pwd");
+      var tel = document.querySelector(".tel");
+      var btn = document.querySelector("button");
+      var input = document.querySelectorAll("input");
+      console.log(input)
+      // var msg = document.querySelector(".msg");
+      // var namerg = /^[a-zA-Z0-9_-]{6,12}$/; // 用户名验证
+      // 昵称是中文的 正则
+      var namerg = /^[\u4e00-\u9fa5]{2,8}$/
+      // console.log(namerg.test("111-22"));
+      var pwdrg = /^[a-zA-Z]\w{5,17}$/; // 验证密码 6-18位
+      // console.log(pwdrg.test("q12341"))
+      var telrg = /^(13[0-9]|14[5|7]|15[0|1|2|3|5|6|7|8|9]|18[0|1|2|3|5|6|7|8|9])\d{8}$/; // 电话号码验证
+      // console.log(telrg.test("13100342345"));
+      // 当输入框失去焦点 开始验证
+      function regxp(ele, reg) {
+        ele.onblur = function() {
+          if (reg.test(this.value)) {
+            this.nextElementSibling.className = "succeed";
+            this.nextElementSibling.innerHTML = "格式正确";
+          } else {
+            this.nextElementSibling.className = "error";
+            this.nextElementSibling.innerHTML = "格式错误";
+          }
+        };
+      }
+      // 点击登录按钮 开始验证
+     
+      // 调用函数
+      regxp(uname, namerg);
+      regxp(pwd, pwdrg);
+      regxp(tel, telrg);
+
+      //  点击按钮验证
+     
+    </script>
+  </body>
+</html>
+yon

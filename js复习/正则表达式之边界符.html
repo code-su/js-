@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 边界符 ^ $
+    var rg = /123/; // 正则表达式里面不需要加引号  不管是数字型还是字符串型
+    // /123/ 只要包含有123这个字符串就会返回 true
+    console.log(rg.test(123)); // true
+    console.log(rg.test(1234));  // true
+    console.log(rg.test(12345));  // true
+    console.log("--------------------------")
+    var reg = /^abc/; // 表示要以abc开头的
+    console.log(reg.test("abc")); // true
+    console.log(reg.test("aabc"));  // false
+    console.log(reg.test("abcd"));  // true
+    console.log("--------------------------")
+    var reg1 = /^abc$/ // 精确匹配  表示必须是 abc
+    console.log(reg1.test("abc")); // true
+    console.log(reg1.test("aabc"));  // false
+    console.log(reg1.test("abcd"));  // false
+  </script>
+</body>
+</html>

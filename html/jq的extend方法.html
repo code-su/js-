@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src=""></script>
+  <script>
+  
+  function sujQuery() {
+
+  }
+  /*
+  sujQuery.extend = function(obj) {
+    // 此时此刻的this就是sujQuery这个类
+    // console.log(this)
+    for(var key in obj) {
+      // sujQuery['isTest'] = function (){console.log('test');}
+      this[key] = obj[key];
+    }
+  }
+  sujQuery.extend({
+    isTest : function() {
+      console.log('test')
+    }
+  })
+  sujQuery.isTest()
+  */
+  
+  /* sujQuery.prototype.extend = function(obj){
+  //  console.log(this)
+  for(var key in obj) {
+     // q[isDemo] = function (){ console.log('demo')}
+      this[key] = obj[key];
+    }
+ }
+ 
+ var q = new sujQuery();
+ q.extend({
+   isDemo : function () {
+     console.log('demo')
+   }
+ })
+ q.isDemo() */
+
+sujQuery.extend = sujQuery.prototype.extend = function (obj) {
+  // console.log(this)
+  for(var key in obj) {
+    this[key] = obj[key];
+  }
+}
+// sujQuery.extend({})
+var q = new sujQuery();
+q.extend({});
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

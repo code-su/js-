@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{
+      margin: 0;
+    }
+    .sliderbar{
+      width: 40px;
+      height: 40px;
+      background-color: teal;
+      display: block;
+      position: absolute;
+      top: 60px;
+      right: 0;
+    }
+    span{
+      text-align: center;
+      display: block;
+      height: 40px;
+      line-height: 40px;
+    }
+    .con{
+      width: 200px;
+      background-color: teal;
+      line-height: 40px;
+      position: absolute;
+      z-index: -1;
+      top: 0;
+    }
+    .icon{
+      transform: rotate(180deg);
+    }
+  </style>
+  <script src="./animate.js"></script>
+</head>
+<body>
+  <div class="sliderbar">
+    <span><</span>
+    <div class="con">问题反馈</div>
+  </div>
+  <script>
+    // 当我们鼠标经过  sliderbar  就会让 con 这个盒子滑动到左侧
+    // 当我们鼠标离开  sliderbar  就会让 con 这个盒子滑动到右侧
+    // 1. 获取元素
+    var sliderbar = document.querySelector('.sliderbar');
+    var con = document.querySelector('.con');
+    var span = document.querySelector('span');
+    // 2. 注册事件
+    sliderbar.addEventListener('mouseenter', function(){
+          // animate(obj, target, callback);
+          animate(con, -160, function(){
+            span.className = 'icon';
+          });
+    })
+    sliderbar.addEventListener('mouseout', function(){
+          // animate(obj, target, callback);
+          animate(con, 0, function(){
+            span.className = '';
+          });
+    })
+  </script>
+</body>
+</html>

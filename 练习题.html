@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 1. 对下列数组进行从小到大排序
+      // 冒泡排序方法
+      var arr = [98, 8, 73, 14, 3];
+      var temp;
+      for (var i = 0; i < arr.length; i++) {
+        for (var j = i + 1; j < arr.length; j++) {
+          if (arr[i] > arr[j]) {
+            temp = arr[i];
+            arr[i] = arr[j];
+            arr[j] = temp;
+          }
+        }
+      }
+      console.log(arr);
+
+      // 使用 sort
+      arr.sort(function (a, b) {
+        return a - b;
+      });
+      console.log(arr);
+
+      // 2. 去除下列数组中的重复项
+      var arr1 = [1, "1", "1", true, true, "a", "a"];
+      // 使用 es6 filter() 方法
+      var newArr1 = arr1.filter(
+        (value, index, self) => self.indexOf(value) === index
+      );
+      console.log(newArr1);
+      // 使用 es6 new Set() 和 Array.from();
+      var newArr2 = Array.from(new Set(arr1));
+      console.log(newArr2);
+
+      // 3. 往下列数组前添加一项，不改变原数组
+
+      var arr2 = [12, 13, 14];
+      arr2.unshift(10);
+      console.log(arr2);
+
+      // 4. 判断下列字符串中包不包含数字
+      var str = "a1bcd";
+      var str1 = "abcd";
+      var reg = /[0-9]/;
+      console.log(reg.test(str));
+      console.log(reg.test(str1));
+
+      // 5. 如何判断两个对象是否相等
+
+      // 6. 要求，程序刚开始运行输出一个 1，接下来连续3次每隔1秒输出一个2, 最后打印一个 3
+      new Promise((resolve, reject) => {
+        resolve(1);
+        console.log("执行任务1(同步)");
+      })
+        .then((value) => {
+          console.log("任务1的结果", value);
+          return new Promise((resolve, reject) => {
+            setTimeout(() => {
+              console.log("执行异步任务2");
+              resolve(2);
+            }, 1000);
+          });
+        })
+        .then((value) => {
+          console.log("任务2结果", value);
+          return new Promise((resolve, reject) => {
+            setTimeout(() => {
+              console.log("执行异步任务3");
+              resolve(2);
+            }, 1000);
+          });
+        })
+        .then((value) => {
+          console.log("任务3结果", value);
+          return new Promise((resolve, reject) => {
+            setTimeout(() => {
+              console.log("执行异步任务4");
+              resolve(2);
+            }, 1000);
+          });
+        })
+        .then((value) => {
+          console.log(value);
+          return 3;
+        })
+        .then((value) => {
+          console.log(value);
+        });
+      // 7. 以下程序运行的结果是什么样的
+      // for (var i = 0; i < 10; i++) {
+      //   setTimeout(() => {
+      //     console.log(i)
+      //   },1000);
+      // }
+      // 运行结果是 10个10  是因为函数作用域
+      // 解决：1  let 块级作用域 都在一个作用域里
+      for (let i = 0; i < 10; i++) {
+        setTimeout(() => {
+          console.log(i);
+        }, 1000);
+      }
+      //   2. (function(){},()) 立即执行函数 会独立创建一个作用域 里面所有的变量都是局部变量
+      // for (var i = 0; i < 10; i++) {
+      //   (function(j){
+      //     setTimeout(() => {
+      //     console.log(j)
+      //   },1000);
+      //   },(i))
+      // }
+
+      // 8. 以下程序分别运行执行的结果是
+      console.log(a); // undefined
+      var a = 10;
+
+      console.log(b); // ReferenceError  不存在变量提升
+      let b = 20;
+    </script>
+  </body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 做一个简易计算器
+      var message = prompt('欢迎使用简易计算器:\n1.加法运算:\n2.减法运算:\n3.乘法运算:\n4.除法运算:\n5.退出:\n请输入你的选项');
+      var sum = 0;
+      switch (message) {
+        case '1':
+          var num1 = prompt('请输入第一个数字');
+          var num2 = prompt('请输入第二个数字');
+          sum = parseFloat(num1) + parseFloat(num2);
+          alert('你的结果是'+ sum);
+          message = prompt('欢迎使用简易计算器:\n1.加法运算:\n2.减法运算:\n3.乘法运算:\n4.除法运算:\n5.退出:\n请输入你的选项');
+          case '2':
+          var num1 = prompt('请输入第一个数字');
+          var num2 = prompt('请输入第二个数字');
+          sum = parseFloat(num1) - parseFloat(num2);
+          alert('你的结果是'+ sum);
+          message = prompt('欢迎使用简易计算器:\n1.加法运算:\n2.减法运算:\n3.乘法运算:\n4.除法运算:\n5.退出:\n请输入你的选项');
+          case '3':
+          var num1 = prompt('请输入第一个数字');
+          var num2 = prompt('请输入第二个数字');
+          sum = parseFloat(num1) * parseFloat(num2);
+          alert('你的结果是'+ sum);
+          message = prompt('欢迎使用简易计算器:\n1.加法运算:\n2.减法运算:\n3.乘法运算:\n4.除法运算:\n5.退出:\n请输入你的选项');
+          case '4':
+          var num1 = prompt('请输入第一个数字');
+          var num2 = prompt('请输入第二个数字');
+          sum = parseFloat(num1) / parseFloat(num2);
+          alert('你的结果是'+ sum);
+          message = prompt('欢迎使用简易计算器:\n1.加法运算:\n2.减法运算:\n3.乘法运算:\n4.除法运算:\n5.退出:\n请输入你的选项');
+          case '5':
+            alert('正在退出');
+            break;
+            default:
+              alert('暂未开通');
+      }
+
+      //  函数写一个  数组排序
+      // function sort(arr){
+      //   for (var i = 0; i <arr.length - 1; i++) {
+      //     for (var j = 0; j <arr.length - i - 1; j++ ) {
+      //       if (arr[j] > arr[j + 1]) {
+      //         var temp = arr[j];
+      //         arr[j] = arr[j + 1];
+      //         arr[j +1] = temp;
+      //       }
+      //     }
+      //   }
+      //   return arr;
+      // }
+      // console.log(sort([3, 4, 6, 2, 7]));
+
+      // 函数写一个  翻转数组
+      // function reverse(arr) {
+      //   var newArr = [];
+      //   for (var i = arr.length - 1; i >= 0; i--) {
+      //     newArr[newArr.length] = arr[i];
+      //   }
+      //   return newArr;
+      // }
+      // console.log(reverse([2, 4, 5, 8, 9]));
+
+      // 创建一个电脑对象，该对象要有颜色 重量 品牌 型号 可以看电影 听音乐 打游戏和敲代码
+      // function Computer(color, weight, type) {
+      //   this.color = color;
+      //   this.weight = weight;
+      //   this.type = type;
+      //   this.game = function(play){
+      //     console.log(play)
+      //   }
+      // }
+      // var oppo = new Computer('银白色','1000g','i5');
+      // console.log(oppo.color);
+      // console.log(oppo.weight);
+      // console.log(oppo.type);
+      // oppo.game('性能很好');
+    </script>
+  </body>
+</html>

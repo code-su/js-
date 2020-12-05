@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="jquery-3.4.1.js"></script>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .warp {
+        width: 600px;
+        height: 300px;
+        margin: 100px auto;
+      }
+      .top {
+        height: 60px;
+      }
+      .top ul {
+        width: 598px;
+        height: 58px;
+        border: 1px solid #000;
+        background-color: #ccc;
+      }
+      .top ul > li {
+        list-style: none;
+        float: left;
+        padding: 19px;
+      }
+      .current {
+        background-color: tomato;
+        color: #fff;
+      }
+      .bottom {
+        height: 240px;
+      }
+      .bottom .item {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="warp">
+      <div class="top">
+        <ul>
+          <li class="current">商品介绍</li>
+          <li>规格与包装</li>
+          <li>售后保障</li>
+          <li>手机社区</li>
+        </ul>
+      </div>
+      <div class="bottom">
+        <div class="item" style="display: block;">
+          商品介绍模块
+        </div>
+        <div class="item">
+          规格与包装模块
+        </div>
+        <div class="item">
+          售后保障模块
+        </div>
+        <div class="item">
+          手机社区模块
+        </div>
+      </div>
+    </div>
+
+    <script>
+      $(function() {
+        // 1. 点击上部的 li 当前 li 添加current类，其余兄弟移除类
+        $(".top li").click(function() {
+          // 链式编程操作
+          $(this)
+            .addClass("current")
+            .siblings()
+            .removeClass("current");
+          // 2. 点击的同时，得到当前 li 的索引号
+          var index = $(this).index();
+          // 3. 让下部里面相应索引号的 item 显示，其余的item 隐藏
+          $(".bottom .item")
+            .eq(index)
+            .show()
+            .siblings()
+            .hide();
+        });
+      });
+    </script>
+  </body>
+</html>

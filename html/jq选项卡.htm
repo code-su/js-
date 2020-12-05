@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+
+        }
+
+        .box {
+            width: 440px;
+            height: 298px;
+            border: 1px solid #000;
+            margin: 50px auto;
+        }
+
+        .nav li {
+            list-style: none;
+            width: 110px;
+            height: 50px;
+            background: orange;
+            line-height: 50px;
+            float: left;
+            text-align: center;
+
+        }
+
+        .nav .current {
+            background: #ccc;
+        }
+
+        .course li {
+            list-style: none;
+            display: none;
+        }
+
+        .course img {
+            width: 440px;
+            height: 249px;
+        }
+
+        .course .show {
+            display: block;
+        }
+    </style>
+    <script src="../javascript/jquery-1.12.4.js"></script>
+    <script>
+        $(function () {
+            //     //1.监听选项卡的移入事件
+            //     $(".nav>li").mouseenter(function(){
+            //         //1.修改被移入选项卡的颜色
+            //         $(this).addClass("current");
+            //         //1.1获取当前移入选项卡的索引
+            //        var index = $(this).index();
+            //        //1.2根据索引找到相应的图片
+            //        var $li = $(".course>li").eq(index);
+            //        //1.3显示找到的图片
+            //        $li.addClass("show");
+
+            //     });
+            //     //1.监听选项卡移出事件
+            //     $(".nav>li").mouseleave(function(){
+            //         //1还原选项卡背景颜色
+            //         $(this).removeClass("current");
+            //          //1.1获取当前移出选项卡的索引
+            //        var index = $(this).index();
+            //        //1.2根据索引找到相应的图片
+            //        var $li = $(".course>li").eq(index);
+            //        //1.3隐藏找到的图片
+            //        $li.removeClass("show");
+
+            //     });
+
+                // 1.监听选项卡的移入事件
+            $(".nav>li").mouseenter(function () {
+                //1.修改被移入选项卡的颜色
+                $(this).addClass("current");
+                //1.1还原其它兄弟选项卡的颜色
+                $(this).siblings().removeClass("current");
+               // 1.2获取当前移出选项卡的索引
+                   var index = $(this).index();
+                   //1.3根据索引找到相应的图片
+                   var $li = $(".course>li").eq(index);
+                   //1.4隐藏非当前的其他图片
+                   $li.siblings().removeClass("show");
+                   //1.5显示对应的图片
+                   $li.addClass("show");
+
+            })
+        })
+
+
+
+    </script>
+</head>
+
+<body>
+    <div class="box">
+        <ul class="nav">
+            <li class="current">h5+c3</li>
+            <li>jQuery</li>
+            <li>c语言</li>
+            <li>Go语言</li>
+        </ul>
+        <ul class="course">
+            <li class="show"><a href=""><img src="../html/img/anime1.jpg" alt=""></a></li>
+            <li><a href=""><img src="../html/img/anime2.jpg" alt=""></a></li>
+            <li><a href=""><img src="../html/img/anime3.jpg" alt=""></a></li>
+            <li><a href=""><img src="../html/img/anime4.jpg" alt=""></a></li>
+        </ul>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button>点击</button>
+    <script>
+      var btn = document.querySelector("button");
+      btn.addEventListener("click", function() {
+        // 1. 记录浏览历史，所以可以实现后退功能
+        // location.assign('http://www.itcast.cn');
+        // 2. 不记录浏览历史，所以不可以实现后退功能
+        // location.replace('http://www.itcast.cn');
+        // 3. 重新加载页面，相当于刷新按钮或者 F5 如果参数为 true 强制刷新 ctrl + F5
+        location.reload();
+      });
+    </script>
+  </body>
+</html>

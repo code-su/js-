@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    img{
+      position: absolute;
+      height: 50px;
+      width: 50px;
+    }
+  </style>
+</head>
+<body>
+  <img src="./javascript/images/88d3e62672b8c3eaea239bed75e5186d.gif" alt="">
+  <script>
+    var img1 = document.querySelector('img');
+    document.addEventListener('mousemove', function(e){
+      // 1. mousemove 只要我们鼠标移动 1px 就会触发这个事件
+      // 2. 核心原理：每次鼠标移动，我们都会获得最新的鼠标坐标位置
+      // 把这个x 和 y 坐标作为图片的 top 和 left 值，就可以移动图片
+      var x = e.pageX;
+      var y = e.pageY;
+      // 3. 千万不要忘记给 left 和 top 添加px 单位
+      // 这里的 -25 是减去图片本身大小的一半  从而达到鼠标在图片中间
+      img1.style.left = x - 25 + 'px';
+      img1.style.top = y - 25 + 'px';
+
+    })
+  </script>
+</body>
+</html>

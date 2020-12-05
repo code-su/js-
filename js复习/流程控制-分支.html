@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 顺序流程控制  分支流程控制  循环流程控制
+
+      // 分支流程控制
+      // 1. if 的语法结构
+      // if ( 条件表达式 ) {
+      //   // 执行语句
+      // }
+      // 2. 执行思路 如果 if 里面的条件表达式结果为真 true 则执行大括号里面的 执行语句
+      // 如果if 条件表达式结果为假 则不执行大括号里面的语句  则执行if 语句后面的代码
+
+      // 双分支语句
+      // 1. if  else
+      // if ( 条件表达式 ) {
+      //   // 执行语句1
+      // } else {
+      //   // 执行语句2
+      // }
+      // 2. 执行思路 如果 if 里面的条件表达式结果为真 true 则执行大括号里面的 执行语句1
+      // 如果if 条件表达式结果为假 则执行大括号里面的 执行语句2
+
+      // 案例  进入网吧
+      // var age = prompt('请输入你的年龄');
+      // if (age >= 18) {
+      //   alert('欢迎光临')
+      // } else {
+      //   alert('未成年 不允许进入')
+      // }
+
+      // 案例  判断闰年
+      // var year = prompt('请输入年份');
+      // if (year % 4 == 0 && year % 100 != 0 || year % 400 == 0) {
+      //     alert(year + '是闰年')
+      // } else {
+      //   alert(year + '是平年')
+      // }
+
+      // 案例  判断是否中奖
+      // var uname = prompt('请输入你的名字');
+      // if (uname == '刘德华') {
+      //   alert('恭喜你中了5元')
+      // } else {
+      //   alert('很抱歉 你未能中奖')
+      // }
+
+      // 多分支语句
+      // 1. if  else if
+      //语法规范
+      // if ( 条件表达式1 ) {
+      //   // 语句1
+      // } else if ( 条件表达式2 ) {
+      //   // 语句2
+      // } else if ( 条件表达式3 ) {
+      //   // 语句3
+      // } else {
+      //   // 最后执行语句
+      // }
+      // 2. 执行思路
+      // 如果条件表达式1 满足就执行 语句1，执行完毕后 退出整个if 分支语句
+      // 如果条件表达式1 不满足，则判断条件表达式2 满足的话，执行语句2 以此类推
+      // 如果上面的所有条件表达式都不成立，则执行else 里面的语句
+
+      // 案例  判断成绩级别
+      // var result = prompt('请输入你的分数');
+      // if (result >= 90) {
+      //   alert('你的成绩级别为:A')
+      // } else if (result >= 80) {
+      //   alert('你的成绩级别为:B')
+      // } else if (result >= 70) {
+      //   alert('你的成绩级别为:C')
+      // } else if (result >= 60) {
+      //   alert('你的成绩级别为:D')
+      // } else {
+      //   alert('你的成绩级别为:E')
+      // }
+
+      // 三元运算符
+      // 1. 语法结构
+      // 条件表达式 ? 表达式1 : 表达式2
+
+      // 案例  数字补零
+      // var time = prompt("请输入一个 0~59 之间的数字");
+      // var result = time < 10 ? "0" + time : time;
+      // alert(result);
+
+      // 1.switch 语句 也是多分支语句 也可以实现多选一
+      // 2.语法结构 switch 转换，开关 case 小例子或者选项的意思
+      // switch (条件表达式) {
+      //   case value:
+      //     执行语句1;
+      //     break;
+      //   case value2:
+      //     执行语句2;
+      //     break;
+      //   default:
+      //     执行最后的语句;
+      // }
+      // 3.执行思路 利用我们的表达式的值 和 case 后面的选项值相匹配 如果匹配的上，就执行该 case里面的语句
+      // 如果都没有匹配的上，那么执行 default 里面的语句
+      // switch (3) {
+      //   case 1:
+      //   console.log('这是1');
+      //   break;
+      //   case 2:
+      //   console.log('这是2');
+      //   break;
+      //   case 3:
+      //   console.log('这是3');
+      //   break;
+      //   default:
+      //   console.log('没有匹配结果')
+      // }
+
+     // 案例 查询水果
+      // var fruit = prompt('请输入要查询的水果');
+      // switch (fruit) {
+      //   case '苹果':
+      //   alert('3.5元一斤');
+      //   break;
+      //   case '香蕉':
+      //   alert('2元一斤');
+      //   break;
+      //   default:
+      //   alert('不好意思，没有');
+      // }
+
+      // 作业 用switch判断时间阶段
+      // var time = prompt('输入时间');
+      // switch (time) {
+      //   case '12':
+      //     alert('中午好');
+      //     break;
+      //   case '18':
+      //     alert('傍晚好');
+      //     break;
+      //   case '23':
+      //     alert('深夜好')
+      //     break;
+      //   default:
+      //     alert('大家好')
+      // }
+
+      // 作业2  班长口袋有多少钱
+      // var money = prompt('班长口袋多少钱');
+      // if (money >= 2000) {
+      //     alert('请大家吃西餐');
+      // } else if (money >= 1500) {
+      //     alert('请大家吃快餐');
+      // } else if (money >= 1000) {
+      //     alert('请大家喝饮料');
+      // } else if (money >= 500) {
+      //     alert('请大家吃棒棒糖');
+      // } else {
+      //   alert('下次记得把钱带够')
+      // }
+
+      // 作业3 比较两个数的最大值
+      // var a = prompt('请输入第一个值');
+      // var b = prompt('请输入第二个值');
+      // if (a > b) {
+      //   alert(a)
+      // } else {
+      //   alert(b)
+      // }
+
+      // 作业4 根据用户输入的数值(数字1 到 数字7) 返回星期几
+      // var date = prompt("请输入1~7的数字");
+      // switch (date) {
+      //   case "1":
+      //     alert("今天星期一");
+      //     break;
+      //   case "2":
+      //     alert("今天星期二");
+      //     break;
+      //   case "3":
+      //     alert("今天星期三");
+      //     break;
+      //   case "4":
+      //     alert("今天星期四");
+      //     break;
+      //   case "5":
+      //     alert("今天星期五");
+      //     break;
+      //   case "6":
+      //     alert("今天星期六");
+      //     break;
+      //   case "7":
+      //     alert("今天星期天");
+      //     break;
+      //   default:
+      //     alert("我也不知道");
+      // }
+
+      // 作业5 判断奇偶
+      // var num = prompt('输入一个值');
+      // if(num % 2 == 0 ) {
+      //   alert('这是偶数');
+      // } else {
+      //   alert('这是奇数')
+      // }
+
+
+    </script>
+  </body>
+</html>

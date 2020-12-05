@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    div{
+       width: 600px;
+       height: 120px;
+       border: 1px solid #000;
+       margin: 100px auto;
+       overflow: hidden;
+       box-sizing: border-box;
+
+    }
+    ul{
+        list-style: none;
+        width: 1800px;
+        height: 120px;
+        /* background:rgba(255,0,0,0.5); */
+       
+    
+    }
+    ul>li{
+        float: left;
+    }
+    img{
+        width: 300px;
+        height: 120px;
+      
+    }
+    </style>
+    <script src="../javascript/jquery-1.12.4.js"></script>
+    <script>
+    $(function(){
+        // 定义变量保存偏移位
+        var offset = 0;
+        //1.让图片滚动起来
+        var timer;
+        function autoPlay(){
+            // var timer = setInterval(function(){
+            offset += -10;
+            if(offset <= -1200){
+                offset = 0;
+            };
+            $("ul").css("marginLeft",offset)
+            
+        // },450);
+        }
+        autoPlay();
+        timer = setInterval(autoPlay,55);
+        //2.监听li的移入移出事件
+        $("li").hover(function(){
+           clearInterval(timer);
+        },function(){
+           //继续滚动
+          
+        //    autoPlay();
+        timer = setInterval(autoPlay,45);
+        })
+    });
+    </script>
+</head>
+<body>
+    <div class="container">
+        <ul>
+            <li><img src="../html/img/anime1.jpg" alt=""></li>
+            <li><img src="../html/img/anime2.jpg" alt=""></li>
+            <li><img src="../html/img/anime3.jpg" alt=""></li>
+            <li><img src="../html/img/anime4.jpg" alt=""></li>
+            <li><img src="../html/img/anime1.jpg" alt=""></li>
+            <li><img src="../html/img/anime2.jpg" alt=""></li>
+        </ul>
+    </div>
+</body>
+</html>

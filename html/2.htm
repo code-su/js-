@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+
+
+
+        window.onload = function () {
+
+            var btn = document.getElementById('btn1');
+
+            if (btn.attachEvent) {
+                btn.attachEvent('onclick', function () {
+                    alert('a');
+                });
+                btn.attachEvent('onclick', function () {
+                    alert('b');
+                });
+            }
+            else {
+                btn.addEventListener('click', function () {
+                    alert('a');
+                }, false);
+                btn.addEventListener('click', function () {
+                    alert('b');
+                }, false);
+            }
+
+
+        }
+
+    </script>
+</head>
+
+<body>
+    <input id="btn1" value="按钮" type="text">
+</body>
+
+</html>

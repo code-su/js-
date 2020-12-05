@@ -1,0 +1,218 @@
+
+// 数组添加
+
+var arr = [1,2,3,4,6,7,7,4];
+
+ arr.push(2);   尾部添加
+ arr.pop();        尾部删除
+ arr.shift();   头部删除
+ arr.unshift(3); 头部添加
+ 删除：splice(起点， 长度)
+ arr.splice(2,4)
+ 插入：splice(起点，长度，元素...);
+ arr.splice(2,0,'a','b','c')
+ 替换：splice(起点，长度，替换内容);
+ arr.splice(2,2,'a','b')
+ alert(arr)
+
+
+
+function getStyle(obj, name) {
+    if(obj.currentStyle) {
+       return obj.currentStyle[name];
+    }
+    else{
+       return getComputedStyle(obj, null)[name];
+    }
+    
+    window.onload = function () {
+    var oDiv = document.getElementById('div1');   
+    alert(getStyle(oDiv,'backgroundColor'));
+    }
+
+
+    // 数组连接
+    var a = [1,2,3];
+    var b = [4,5,6];
+    
+    alert(a.concat(b)); //1,2,3,4,5,6
+
+
+
+    // join  分隔符
+
+    var arr = [1,2,3,4,4,];
+    
+    alert(arr.join('-')); // 1-2-3-4-4
+    
+    
+
+    //div滚动
+    setInterval(function() {
+        var oDiv = document.getElementById('div1');
+    
+        oDiv.style.left = oDiv.offsetLeft + 10 +"px";
+    },30);
+
+
+    // 只返回当前元素的子节点
+    window.onload = function () {
+        var oDiv = document.getElementById('div1');
+    
+       alert(oDiv.children.length);
+    };
+
+
+    //元素属性操作
+    window.onload = function () {
+       var oTxt = document.getElementById('txt1');
+       var oBtn = document.getElementById('btn1');
+    
+       oBtn.onclick = function () {
+         //oTxt.value = '123';
+         //oTxt.['value'] ='123';
+         oTxt.setAttribute('value','像输入的值')
+       };
+    };
+
+
+    //父节点应用
+    window.onload = function () {
+        var aA = document.getElementsByTagName('a');
+        for (var i = 0; i<aA.length; i++) {
+            aA[i].onclick = function () {
+                this.parentNode.style.display = 'none';
+            };
+        }
+    };
+
+      //插入insertBefore
+    window.onload = function () {
+      var oBtn = document.getElementById('btn1');
+      var oUl = document.getElementById('ul1');
+      var oTxt = document.getElementById('txt1');
+
+      oBtn.onclick = function () {
+          var oLi = document.createElement('li');
+          var aLi = oUl.getElementsByTagName('li');
+
+          oLi.innerHTML= oTxt.value;
+          
+          if(aLi.length>0) {
+              oUl.insertBefore(oLi,aLi[0]);
+          }
+          else{
+              oUl.appendChild(oLi);
+          }
+        
+      };
+  };
+
+
+
+//三角形
+
+  /* .triangle{
+    width: 0px;
+    height: 0px;
+    border:50px solid #008c8c;
+    border-top-color:transparent;
+    border-bottom-color:transparent;
+    border-right-color:transparent;
+ }
+ 
+/*  */
+
+
+
+// jQuery的核心函数
+// $(); 就代表调用了jQuery的核心函数
+// 1.可以接收一个函数
+$(function (){
+  alert("hello");
+  //2.接收一个字符串
+  //2.1接收一个字符串选择器
+  //返回一个jQuery对象，对象中保存了找到的DOM元素
+  var $box1 = $(".box1");
+  var $box2 = $("#box2");
+
+  console.log($box1);
+  console.log($box2);
+  //2.2接收一个字符串代码片段
+  //返回一个jQuery对象，对象中保存了创建的DOM元素
+  var $p = $("<p>我是一个段落</p>");
+
+  console.log($p);
+  //2.3接收一个DOM元素
+  //会被包装成一个jQuery对象返回给我们
+  var span = document.getElementsByTagName("span")[0];
+
+  console.log(span);
+
+  var $span = $("span");
+  console.log($span);
+})
+ 
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    // var a = 1345;
+
+    if(a>9 && a<100){
+        alert('两位数');
+    }else{
+      alert('不是')
+   
+    判断单双
+    条件?语句1:语句2;
+    var a = 123;
+    a%2 == 0? alert('双数'): alert('单数')
+    for (var i = 0; i<5; i++) {
+      if(i ==2) {
+           break;   整个循环中断了
+             continue;   跳过本次继续执行
+      }
+      alert(i)
+   
+   
+    真: true、非零数字、非空字符串、非空对象
+    假: false、数字零、空字符串、空对象、undefine
+    var a = 1;
+    var b = 34;
+    var c = 'abc'
+    function sum () {
+      var a = 0;
+      for (var i = 0; i<arguments.length; i++){
+          a += arguments[i];
+      }
+      return a
+    alert(sum(12,3,5));
+   
+   
+   
+ 

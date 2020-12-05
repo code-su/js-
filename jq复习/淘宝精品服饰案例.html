@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="jquery-3.4.1.js"></script>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .container {
+        width: 210px;
+        height: 200px;
+        margin: 100px auto;
+      }
+      #left {
+        width: 60px;
+        height: 100%;
+        float: left;
+      }
+      #left li {
+        list-style: none;
+        height: 50px;
+        text-align: center;
+        line-height: 50px;
+      }
+      #left li:hover{
+        background-color: steelblue;
+      }
+      #left li>a{
+        text-decoration: none;
+        color: #000;
+      }
+      .content {
+        width: 150px;
+        float: right;
+        height: 100%;
+        overflow: hidden;
+      }
+    </style>
+    <script>
+      $(function(){
+        // 1. 鼠标经过左侧的 li 
+        $('#left li').mouseover(function(){
+          // 2. 得到当前 li 的索引号
+          var index = $(this).index();
+          // 3. 让我们右侧盒子相应索引号的图片显示出来就好了
+          $('.content div').eq(index).show();
+          // 4. 其余的图片(就是其他的兄弟) 隐藏起来
+          $('.content div').eq(index).siblings().hide();
+        })
+      })
+    </script>
+  </head>
+  <body>
+    <div class="container">
+      <ul id="left">
+        <li><a href="#">衣服</a></li>
+        <li><a href="#">帽子</a></li>
+        <li><a href="#">裤子</a></li>
+        <li><a href="#">袜子</a></li>
+      </ul>
+      <div class="content">
+        <div>
+          <a href="#"
+            ><img src="../html/img/anime4.jpg" alt="" width="150" height="200"
+          /></a>
+        </div>
+        <div>
+          <a href="#"
+            ><img src="../html/img/anime1.jpg" alt="" width="150" height="200"
+          /></a>
+        </div>
+        <div>
+          <a href="#"
+            ><img src="../html/img/anime2.jpg" alt="" width="150" height="200"
+          /></a>
+        </div>
+        <div>
+          <a href="#"
+            ><img src="../html/img/anime3.jpg" alt="" width="150" height="200"
+          /></a>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

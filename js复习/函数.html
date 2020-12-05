@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 函数就是封装了一段可以被重复执行调用的代码块。目的：就是让大量代码重复使用
+      // 1. 声明函数
+      // function 函数名() {
+      //   // 函数体
+      // }
+
+      // function sayHi() {
+      //   console.log('hhaha');
+      // }
+      // (1) function 声明函数的关键字 全部小写
+      // (2) 函数是做某件事情，函数名一般是动词 sayHi
+      // (3) 函数不调用自己不执行
+      // 2. 调用函数
+      // 函数名();
+      // sayHi();
+
+      // 利用函数计算1~100之间的和
+      // 1.声明函数
+      // function getSum() {
+      //   var sum = 0;
+      //   for (var i = 1; i <= 100; i++) {
+      //     sum += i;
+      //   }
+      //   console.log(sum);
+      // }
+      // // 2.调用函数
+      // getSum();
+
+      // 案例  利用函数求任意两个数的和
+      // function getSum(a, b) {
+      //   // var sum = 0;
+      //   var sum = a + b;
+      //   console.log(sum);
+      // }
+      // getSum(1,5);
+
+      // 案例  利用函数求任意两个数之间的和
+      // function getSum(num1, num2) {
+      //   var sum = 0;
+      //   for (var i = num1; i <= num2; i++) {
+      //     sum += i;
+      //   }
+      //   console.log(sum);
+      // }
+      // getSum(2, 50);
+      // getSum(1, 100);
+
+      // 函数实参形参个数匹配
+      // function getSum(num1, num2){
+      //   console.log(num1 + num2)
+      // }
+      // 1. 如果实参的个数和形参的个数一致，则正常输出结果
+      // getSum(1, 2);  // 3
+      // 2. 如果实参的个数多于形参的个数， 会取到形参的个数
+      // getSum(1, 2, 3);  // 3
+      // 3. 如果实参的个数小于形参的个数， 多余的形参定义为 undefined 最终的结果为 NaN
+      // 形参可以看做是不用声明的变量  num2 是一个变量但是没有接收值  最终结果就是 undefined
+      // getSum(1);  // NaN
+      // 建议  我们尽量让实参的个数和形参的个数相匹配
+
+      // 函数的返回值格式
+      // function 函数名() {
+      //   return 需要返回的结果;
+      // }
+      // 函数名();
+      // (1) 我们函数只是实现某种功能，最终的结果需要返回给函数的调用者 函数名() 通过return 实现的
+      // (2) 只要函数遇到 return 就把后面的结果 返回给函数的调用者  函数名() = return 后面的结果
+      // 代码验证
+      // function getResult() {
+      //   return 'haha';
+      // }
+      // getResult();
+      // console.log(getResult());
+
+      // 求任意两个数的和
+      // function getSum(num1, num2) {
+      //   return num1 + num2;
+      // }
+      // console.log(getSum(1, 7));
+
+      // 案例  利用函数求任意两个数的最大值
+      // function getMax(num1, num2) {
+      //   // if (num1 > num2) {
+      //   //   return num1;
+      //   // } else {
+      //   //   return num2;
+      //   // }
+      //   return num1 > num2 ? num1 : num2;
+      // }
+      // getMax();
+      // console.log(getMax(10, 7));
+
+      // 案例  利用函数求任意一个数组中的最大值
+
+      // function getMax(arr) {  // arr 接收一个数组
+      //   var max = arr[0];
+      //   for (var i = 1; i < arr.length; i++) {
+      //     if (arr[i] > max) {
+      //       max = arr[i];
+      //     }
+      //   }
+      //   return max;
+      // }
+      // var res = getMax( [6, 76, 34, 48, 87, 12]);  // 在我们实际开发中  我们经常用一个变量来接收  函数里面的返回结果  使用更简单
+      // var res1 = getMax( [65, 86, 134, 8, 70, 12]);  // 在我们实际开发中  我们经常用一个变量来接收  函数里面的返回结果  使用更简单
+      // console.log(res);
+      // console.log(res1);
+
+      // 作业
+      // 1. 写一个函数，用户输入任意两个数字的任意算数运算符(简单的计算器小功能) 并能弹出运算后的结果。
+
+      //  arguments的使用
+      //  只有函数才有 arguments 对象  而且是每个函数都内置好了这个 arguments
+      // function fn() {
+      //     console.log(arguments);  //  里面存储了所有传递过来的实参
+      //     // 我们可以按照数组的方式遍历 arguments
+      //     for (var i = 0; i < arguments.length; i++) {
+      //       console.log(arguments[i]);
+      //     }
+      // }
+      // fn(1, 2, 3);
+      // 伪数组  并不是真正意义上的数组
+      // 1. 具有数组的  length 属性
+      // 2. 按照索引的方式进行存储的
+      // 3. 它没有真正数组的一些方法  pop()  push() 等等
+
+      // 利用函数求任意个数的最大值
+      // function getMax() {
+      //   var max = arguments[0];
+      //   for (var i = 1; i < arguments.length; i++) {
+      //     if (arguments[i] > max) {
+      //       max = arguments[i];
+      //     }
+      //   }
+      //   return max;
+      // }
+      // console.log(getMax(1, 2, 4));
+      // console.log(getMax(15, 22, 24, 17, 6));
+      // console.log(getMax(1, 2, 42, 23, 14, 25));
+
+      // 利用函数翻转任意数组  reverse 翻转
+      // function reverse(arr){
+      //   var newArr = [];
+      //   for (var i = arr.length -1; i >= 0; i--) {
+      //     newArr[newArr.length] = arr[i];
+      //   }
+      //   return newArr;
+      // }
+      // var arr1 = reverse([1, 3, 6, 0, 1 ]);
+      // console.log(arr1);
+      // var arr2 = reverse([3, 4, 9, 8, 12]);
+      // console.log(arr2)
+
+      // 利用函数 冒泡排序  sort 排序
+      // function sort(arr) {
+      //   for (var i = 0; i < arr.length - 1; i++) {
+      //     for (var j = 0; j < arr.length - i - 1; j++) {
+      //       if (arr[j] > arr[j + 1]) {
+      //         var temp = arr[j];
+      //         arr[j] = arr[j + 1];
+      //         arr[j + 1] = temp;
+      //       }
+      //     }
+      //   }
+      //   return arr;
+      // }
+      // var arr1 = sort([1, 4, 2, 5]);
+      // console.log(arr1);
+      // var arr2 = sort([2, 4, 5, 3, 1]);
+      // console.log(arr2);
+
+      // 利用函数判断闰年
+      // function isRunYear(year) {
+      //   // 如果是闰年我们就返回 true 否则 返回 false
+      //   var flag = false;
+      //   if(year % 4 == 0 && year % 100 !== 0 || year % 400 == 0) {
+      //     flag = true;
+      //   }
+      //   return flag;
+      // }
+      // console.log(isRunYear(2000));
+
+      // // 用户输入年份，输出当前年份 2月份的天数
+      // function backDay() {
+      //   var year = prompt('请输入年份:');
+      //   if (isRunYear(year)) {  //  这里调用 isRunYear() 函数
+      //     alert('当前年份是闰年2月份有29天');
+      //   } else {
+      //     alert('当前年份是平年2月份有28天');
+      //   }
+      // }
+      // backDay();
+
+      // 函数的2种声明方式
+      // 1. 利用函数关键字自定义函数(命名函数)
+      // function fn() {
+
+      // }
+      // fn();
+      // 2. 函数表达式(匿名函数)
+      // var 变量名 = function (){};
+      // var fun = function(){
+      //   console.log('我是函数表达式');
+      // };
+      // fun();
+      // (1) fun是变量名 不是函数名
+      // (2) 函数表达式声明方式跟声明变量差不多，只不过变量里面存的是值  而  函数表达式里面存的是函数
+      // (3) 函数表达式也可以进行传递参数
+
+      
+    </script>
+  </body>
+</html>

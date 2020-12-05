@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .message{
+      color: green;
+      font-size: 13px;
+      margin-left: 10px;
+      display: none;
+    }
+    .error{
+      color: red;
+      font-size: 13px;
+      margin-left: 10px;
+    }
+  </style>
+</head>
+<body>
+  <input type="text" class="uname"> <span class="message"></span>
+  <script>
+    // 量词是设定某个模式出现的次数
+    var reg = /^[a-zA-Z0-9_-]{6,16}$/; // 这个模式用户只能输入英文字母 数字 下划线 短横线但是有边界符和[] 这就限定了只能多选1
+    // {6,16} 中间不要有空格 加了这个之后用户可以输入>=6,<=16的字符
+    // console.log(reg.test("aa"));  // false 不符合次数要求
+    
+    var uname = document.querySelector(".uname");
+    var msg = document.querySelector(".message");
+    uname.onblur = function(){
+      if(reg.test(this.value)) {
+        msg.style.display = "block";
+        msg.className = "message";
+        msg.innerHTML = "格式正确"
+      } else {
+        msg.className = "error";
+        msg.innerHTML = "格式错误"
+      }
+    }
+  </script>
+</body>
+</html>

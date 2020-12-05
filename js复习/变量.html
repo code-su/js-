@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // // 1. 用户输入名字  存储到一个myname的变量里面
+      // var myname = prompt('请输入你的姓名');
+      // // 2. 输出用户名称
+      // alert(myname)
+
+      // 声明变量的特殊情况
+      // (1) 只声明不赋值
+      // var age;
+      // console.log(age);  // undefined
+      // (2) 不声明不赋值 直接使用
+      // console.log(na);  // 会报错 na is not defined
+      // (3) 不声明直接赋值使用
+      // qq = 12;
+      // console.log(qq); // 12
+
+      // 换苹果
+      // 我们需要一个临时变量
+      // 把apple1 给我们的临时变量 temp
+      // 然后把apple2 里面的苹果给apple1 
+      // 最后把临时变量的值个apple2
+      var temp;
+      var apple1 = '青苹果';
+      var apple2 = '红苹果';
+      temp = apple1;
+      apple1 = apple2;
+      apple2 = temp;
+      console.log(apple1);
+      console.log(apple2);
+
+      
+    </script>
+  </body>
+</html>

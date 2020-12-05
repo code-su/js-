@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="jquery-3.4.1.js"></script>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+    }
+    .box{
+      width: 360px;
+      height: 175px;
+      margin: 100px auto;
+      border: 1px solid #000;
+      /* border-radius: 30px; */
+      /* box-shadow: 0 0 0 15px green, 0 0 0 20px teal; */
+    }
+    ul{
+      width: 230px;
+      margin-left: 70px;
+    }
+    
+    ul li{
+      list-style: none;
+      border-bottom: 1px dashed #000;
+      margin-top: 5px;
+    }
+    ul li a{
+      float: right;
+    }
+  </style>
+</head>
+<body>
+  <div class="box" id="weibo">
+    <span>发布微博</span>
+    <textarea name="" id="" cols="30" rows="10" class="text"></textarea>
+    <button>发布</button>
+    <ul></ul>
+  </div>
+  <script>
+    $(function(){
+      // 1. 点击发布按钮，动态创建一个小 li, li里面放入文本框的内容和删除按钮， 并且添加到 ul 中
+      $("button").on("click",function(){
+        var li = $("<li></li>");
+        li.html($(".text").val() + "<a href='javascript:;'>删除</a>");
+        $("ul").prepend(li);
+        li.slideDown();
+        $('.text').val("");
+
+      })
+      // 2. 点击的删除按钮，可以删除当前的微博留言
+      // $("ul a").click(function(){  // 此时的 click不能给动态创建的 a 添加事件
+      //   alert(11);
+      // })
+      $("ul").on("click","a",function(){
+        $(this).parent().slideUp(function(){
+          $(this).remove()
+        })
+      })
+
+    })
+  </script>
+</body>
+</html>
